@@ -1,0 +1,452 @@
+fileFormatVersion: 2
+guid: d97190fabfa624465b898d70411ac8c9
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1664243636804511689
+    second: Boxhead_sprites_zombie_0
+  - first:
+      213: 5104000725098659827
+    second: Boxhead_sprites_zombie_1
+  - first:
+      213: 4577890580626491124
+    second: Boxhead_sprites_zombie_2
+  - first:
+      213: -4275622943654036040
+    second: Boxhead_sprites_zombie_3
+  - first:
+      213: -6865789176213600334
+    second: Boxhead_sprites_zombie_4
+  - first:
+      213: 380787863777856087
+    second: Boxhead_sprites_zombie_5
+  - first:
+      213: 1340390260537788818
+    second: Boxhead_sprites_zombie_6
+  - first:
+      213: -2481184430613762667
+    second: Boxhead_sprites_zombie_7
+  - first:
+      213: -1125405671732547535
+    second: Boxhead_sprites_zombie_8
+  - first:
+      213: -6101762132335818084
+    second: Boxhead_sprites_zombie_9
+  - first:
+      213: 8975345968194607066
+    second: Boxhead_sprites_zombie_10
+  - first:
+      213: -5216555602552278434
+    second: Boxhead_sprites_zombie_11
+  - first:
+      213: 8092470467483897225
+    second: Boxhead_sprites_zombie_12
+  - first:
+      213: 6673501077516505042
+    second: Boxhead_sprites_zombie_13
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Boxhead_sprites_zombie_0
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 2384
+        width: 433
+        height: 996
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7381098da3b67e8e0800000000000000
+      internalID: -1664243636804511689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boxhead_sprites_zombie_1
+      rect:
+        serializedVersion: 2
+        x: 1862
+        y: 2384
+        width: 433
+        height: 996
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ff77d80e9d05d640800000000000000
+      internalID: 5104000725098659827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boxhead_sprites_zombie_2
+      rect:
+        serializedVersion: 2
+        x: 3318
+        y: 2971
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f649d67a3fe78f30800000000000000
+      internalID: 4577890580626491124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boxhead_sprites_zombie_3
+      rect:
+        serializedVersion: 2
+        x: 3500
+        y: 2234
+        width: 468
+        height: 967
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bdbdf1069fe9a4c0800000000000000
+      internalID: -4275622943654036040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boxhead_sprites_zombie_4
+      rect:
+        serializedVersion: 2
+        x: 4833
+        y: 2234
+        width: 471
+        height: 967
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b70119ee11d7b0a0800000000000000
+      internalID: -6865789176213600334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boxhead_sprites_zombie_5
+      rect:
+        serializedVersion: 2
+        x: 5474
+        y: 2971
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75a424b6b84d84500800000000000000
+      internalID: 380787863777856087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boxhead_sprites_zombie_6
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 617
+        width: 606
+        height: 1122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2998fbb17d50a9210800000000000000
+      internalID: 1340390260537788818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boxhead_sprites_zombie_7
+      rect:
+        serializedVersion: 2
+        x: 1988
+        y: 532
+        width: 606
+        height: 1125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59d690ff7ef019dd0800000000000000
+      internalID: -2481184430613762667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boxhead_sprites_zombie_8
+      rect:
+        serializedVersion: 2
+        x: 3470
+        y: 479
+        width: 633
+        height: 1119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 130fb241181c160f0800000000000000
+      internalID: -1125405671732547535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boxhead_sprites_zombie_9
+      rect:
+        serializedVersion: 2
+        x: 4182
+        y: 1320
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9a813e4baf225ba0800000000000000
+      internalID: -6101762132335818084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boxhead_sprites_zombie_10
+      rect:
+        serializedVersion: 2
+        x: 4569
+        y: 1320
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad7597aca95de8c70800000000000000
+      internalID: 8975345968194607066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boxhead_sprites_zombie_11
+      rect:
+        serializedVersion: 2
+        x: 4663
+        y: 479
+        width: 632
+        height: 1119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e523cc661521b97b0800000000000000
+      internalID: -5216555602552278434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boxhead_sprites_zombie_12
+      rect:
+        serializedVersion: 2
+        x: 4191
+        y: 1282
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98d87b1b30b3e4070800000000000000
+      internalID: 8092470467483897225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boxhead_sprites_zombie_13
+      rect:
+        serializedVersion: 2
+        x: 4566
+        y: 1282
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dfce8d4fd90d9c50800000000000000
+      internalID: 6673501077516505042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
