@@ -27,8 +27,8 @@ public class Zombie : MonoBehaviour
             transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
 
             Vector2 dir = (transform.position - target.position).normalized;
-            //animator.SetFloat("Horizontal", dir.x);
-            //animator.SetFloat("Vertical", dir.y);
+            animator.SetFloat("Horizontal", dir.x);
+            animator.SetFloat("Vertical", dir.y);
         }
 
         if (HP <= 0) Destroy(gameObject);

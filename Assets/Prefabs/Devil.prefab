@@ -11,11 +11,10 @@ GameObject:
   - component: {fileID: 8863703922390463100}
   - component: {fileID: 8863703922390463091}
   - component: {fileID: 8863703922390463088}
-  - component: {fileID: 8863703922390463095}
-  - component: {fileID: 2304187983773309920}
-  - component: {fileID: -8189395119721069596}
+  - component: {fileID: 763985583629544761}
+  - component: {fileID: 7308012012649923139}
   m_Layer: 0
-  m_Name: Zombie
+  m_Name: Devil
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 8863703922390463094}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 11.1, y: -1.78, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
+  m_LocalScale: {x: 2.6, y: 2.6, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -74,8 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 999
-  m_Sprite: {fileID: -4275622943654036040, guid: d97190fabfa624465b898d70411ac8c9,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: 533f33e5551e24d3e9a040d6531e0269, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -107,26 +105,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!95 &8863703922390463095
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8863703922390463094}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5e237a17ad0324c36bfd06178a3691a7, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &2304187983773309920
+--- !u!114 &763985583629544761
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -135,13 +114,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 8863703922390463094}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a8866c65ab4c412984a07a1cdbeba65, type: 3}
+  m_Script: {fileID: 11500000, guid: 98355398c22b2436fa223c571290b83b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1.5
-  animator: {fileID: 8863703922390463095}
-  HP: 3
---- !u!61 &-8189395119721069596
+  animator: {fileID: 0}
+  HP: 5
+  shootPeriod: 5
+  fireball: {fileID: 6711168111432735628, guid: 00691870d9163493d88e51b308281370,
+    type: 3}
+--- !u!61 &7308012012649923139
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -158,12 +140,12 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.6807036, y: 9.67}
+    oldSize: {x: 0.47, y: 0.99}
     newSize: {x: 4.690705, y: 9.639999}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.6807036, y: 9.67}
+  m_Size: {x: 0.47, y: 0.99}
   m_EdgeRadius: 0
