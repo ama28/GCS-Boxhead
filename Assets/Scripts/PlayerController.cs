@@ -6,30 +6,35 @@ public class PlayerController : MonoBehaviour
 {
 
     [SerializeField] private Transform pfBullet;
+    private Vector3 pToMouse;
+    private Vector3 bulletStart;
+    public float HP = 10000; //temporary (need to add HP code from David)
 
     // Start is called before the first frame update
     void Start()
     {
 
     }
-
-    //public float spd = 5f;
+    
 
     // Update is called once per frame
     void Update()
     {
         //movement is already done in BasicMovement.cs
         //transform.position += (new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0)) * spd * Time.deltaTime;
-
-        if (Input.GetMouseButtonDown(0))
+        this.pToMouse = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position);
+        if (Input.GetKeyDown(KeyCode.Space))
             this.Shoot();
     }
 
     void Shoot()
     {
-        Vector3 shootDir = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized;
-
         Transform bulletTransform = Instantiate(pfBullet, transform.position, Quaternion.identity);
-        bulletTransform.GetComponent<Bullet>().setup(shootDir);
+        bulletTransform.GetComponent<Bullet>().setup(pToMouse);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "Fireball") this.HP -= 1;
     }
 }
