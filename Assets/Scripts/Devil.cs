@@ -10,8 +10,7 @@ public class Devil : MonoBehaviour
     public float speed;
     private Transform target;
     public Animator animator;
-
-    public float HP;
+  
     public float shootPeriod;
     private float timer;
     [SerializeField] private Transform fireball;
@@ -39,8 +38,6 @@ public class Devil : MonoBehaviour
         //animator.SetFloat("Horizontal", dir.x);
         //animator.SetFloat("Vertical", dir.y);
 
-
-        if (HP <= 0) Destroy(gameObject);
     }
 
     void Shoot(Vector3 dir)
@@ -49,8 +46,4 @@ public class Devil : MonoBehaviour
         bulletTransform.GetComponent<Fireball>().setup(dir);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Bullet") HP -= 1;
-    }
 }

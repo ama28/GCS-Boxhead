@@ -9,8 +9,16 @@ public class DataManager : Singleton<DataManager>
 
     public float InvincibleTime;
     private float CurrentTime;
+
+    public GameEvent Death;
     // Start is called before the first frame update
     void Start()
+    {
+        Initialize();
+        DontDestroyOnLoad(gameObject);
+    }
+
+    public void Initialize()
     {
         CurrentHealth = MaxHealth;
         CurrentTime = 0;
@@ -38,6 +46,11 @@ public class DataManager : Singleton<DataManager>
     public void changeHealth(int change)
     {
         CurrentHealth += change;
+
+        if(CurrentHealth <= 0)
+        {
+            Death.Raise();
+        }
     }
 
     public float getTime()

@@ -5,10 +5,9 @@ using UnityEngine;
 public class Fireball : MonoBehaviour
 {
     private Vector3 dir;
-    public float maxDistance;
     private float travelledDistance = 0;
     public float moveSpeed = 80f;
-    public float timeAlive = 5f;
+    public float timeAlive = 30f;
 
     public void setup(Vector3 dir)
     {
@@ -24,9 +23,12 @@ public class Fireball : MonoBehaviour
         transform.position += dir * d;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "Wall") Destroy(gameObject);
+        if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "Wall"){
+            Destroy(gameObject, 0.15f);
+            DataManager.Instance.changeHealth(-20);
+        }
     }
 
     //return abs degrees angle from vector (float)

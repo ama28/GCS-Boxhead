@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using UnityEngine;
 
-public class EnemyAttack : MonoBehaviour
+public class ZombieAttack : MonoBehaviour
 {
-    public GameObject player;
+    private GameObject player;
     public int damage;
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -19,13 +19,18 @@ public class EnemyAttack : MonoBehaviour
     {
         if (DataManager.Instance.getTime() <= 0 && player != null)
         {
-            Debug.Log(DataManager.Instance.getHealth());
             DataManager.Instance.changeHealth(-damage);
             DataManager.Instance.ResetTimer();
+            Debug.Log(DataManager.Instance.getHealth());
         }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
+    {
+        player = null;
+    }
+
+    public void ResetAttack()
     {
         player = null;
     }
