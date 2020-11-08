@@ -39,7 +39,6 @@ public class Zombie : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("hit");
         if (collision.gameObject.tag == "Bullet") CurrentHP -= 1;
         healthbar.fillAmount = CurrentHP / MaxHP;
     }

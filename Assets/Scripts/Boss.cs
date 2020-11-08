@@ -3,12 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-/* IMPLEMENTS / REPLACES ENEMYFOLLOW */
-
-public class Devil : MonoBehaviour
+public class Boss : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public float speed;
     private Transform target;
     public Animator animator;
 
@@ -32,10 +28,7 @@ public class Devil : MonoBehaviour
     void Update()
     {
         this.timer += Time.deltaTime;
-        if (Vector2.Distance(transform.position, target.position) > 0)
-        {
-            transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
-        }
+
         Vector2 dir = (target.position - transform.position).normalized;
         if (this.timer >= this.shootPeriod)
         {
@@ -58,5 +51,6 @@ public class Devil : MonoBehaviour
         if (collision.gameObject.tag == "Bullet") CurrentHP -= 1;
         healthbar.fillAmount = CurrentHP / MaxHP;
     }
+
 
 }
