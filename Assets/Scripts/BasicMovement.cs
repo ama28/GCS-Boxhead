@@ -8,6 +8,8 @@ public class BasicMovement : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 moveVelocity;
     public Animator animator;
+    public bool stopped;
+    public bool dPad;
 
     // Start is called before the first frame update
     void Start()
@@ -21,10 +23,41 @@ public class BasicMovement : MonoBehaviour
     {
         animator.SetFloat("Horizontal", Input.GetAxisRaw("Horizontal"));
         animator.SetFloat("Vertical", Input.GetAxisRaw("Vertical"));
+        animator.SetBool("notMoving", stopped);
+        animator.SetBool("quad", dPad);
 
         Vector2 moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         moveVelocity = moveInput.normalized * speed;
 
+        /*
+        if (Input.GetAxisRaw("Horizontal") > 0 && Input.GetAxisRaw("Vertical") > 0 || Input.GetAxisRaw("Vertical") < 0 && Input.GetAxisRaw("Horizontal") < 0 || Input.GetAxisRaw("Vertical") < 0 && Input.GetAxisRaw("Horizontal") > 0 || Input.GetAxisRaw("Horizontal") > 0 && Input.GetAxisRaw("Vertical") < 0)
+
+        {
+
+            dPad = true;
+
+        }
+
+        else
+        {
+            dPad = false;
+
+        }
+        */
+            if (Input.GetAxisRaw("Horizontal") == 0 && Input.GetAxisRaw("Vertical") == 0)
+
+        {
+            stopped = true;
+
+        }
+
+        else
+
+        {
+            stopped = false;
+
+
+        }
 
     }
 
