@@ -8,10 +8,7 @@ public class Boss : MonoBehaviour
     private Transform target;
     public Animator animator;
 
-    public Image healthbar;
-
-    public float MaxHP;
-    private float CurrentHP;
+    public Int health;
 
     public float shootPeriod;
     private float timer;
@@ -20,7 +17,6 @@ public class Boss : MonoBehaviour
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-        CurrentHP = MaxHP;
         timer = 0;
     }
 
@@ -37,7 +33,6 @@ public class Boss : MonoBehaviour
         }
         //animator.SetFloat("Horizontal", dir.x);
         //animator.SetFloat("Vertical", dir.y);
-        if (CurrentHP <= 0) Destroy(gameObject);
     }
 
     void Shoot(Vector3 dir)
@@ -48,8 +43,7 @@ public class Boss : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Bullet") CurrentHP -= 1;
-        healthbar.fillAmount = CurrentHP / MaxHP;
+        if (collision.gameObject.tag == "Bullet") health.value -= 1;
     }
 
 
