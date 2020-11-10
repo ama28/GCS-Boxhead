@@ -1899,8 +1899,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audio: {fileID: 3400783413191089328}
-  loopSamples: 8174001
-  startDelay: 594300
+  loopSamples: 8173701
+  startDelay: 594200
 --- !u!223 &3400783414147597462
 Canvas:
   m_ObjectHideFlags: 0

@@ -14,7 +14,6 @@ public class MusicLooper : MonoBehaviour
     void Start()
     {
         audio.Play();
-        audio.time = 179;
     }
 
     // Update is called once per frame
