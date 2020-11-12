@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gunshot.volume = 0.75f;
+        gunshot.volume = 0.5f;
     }
 
 
