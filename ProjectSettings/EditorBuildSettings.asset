@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/andrew_branch.unity
     guid: dc4cb9c7086694ec3a09dca9499e2d65
+  - enabled: 1
+    path: Assets/Scenes/floor 1.unity
+    guid: 532ce8aa029174f8bb749a7481e3e250
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: bc0c7ddb0579444c2ab3e12675eb5ff9
   m_configObjects: {}
