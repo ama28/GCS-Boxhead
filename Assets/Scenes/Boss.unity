@@ -272,7 +272,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
   health: {fileID: 11400000, guid: 0cb00d622c8d8c74a85ed01d37c1b151, type: 2}
-  shootPeriod: 0.5
+  shootPeriod: 0.7
   fireball: {fileID: 6711168111432735628, guid: 00691870d9163493d88e51b308281370,
     type: 3}
   fireballPosition: {fileID: 1780440313}

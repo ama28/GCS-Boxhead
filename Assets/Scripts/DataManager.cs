@@ -45,7 +45,6 @@ public class DataManager : Singleton<DataManager>
     public void changeHealth(int change)
     {
         CurrentHealth += change;
-
         if(CurrentHealth <= 0)
         {
             Death.Raise();
