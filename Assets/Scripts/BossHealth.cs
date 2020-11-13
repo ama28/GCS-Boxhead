@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class BossHealth : MonoBehaviour
 {
@@ -18,5 +19,9 @@ public class BossHealth : MonoBehaviour
     void Update()
     {
         healthBar.fillAmount = (float) healthValue.value / maxHealth;
+        if(healthValue.value == 0)
+        {
+            SceneManager.LoadScene("floor_1");
+        }
     }
 }
