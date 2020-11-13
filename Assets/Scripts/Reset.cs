@@ -19,6 +19,7 @@ public class Reset : MonoBehaviour
     {
         Time.timeScale = 1;
         DataManager.Instance.Initialize();
+        EndPanel.SetActive(false);
         SceneManager.LoadScene(startScene);
     }
 }
