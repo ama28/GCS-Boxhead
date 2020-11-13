@@ -22,6 +22,7 @@ public class BossHealth : MonoBehaviour
         if(healthValue.value == 0)
         {
             SceneManager.LoadScene("floor_1");
+            DataManager.Instance.Initialize();
         }
     }
 }

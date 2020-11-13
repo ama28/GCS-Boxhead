@@ -7,7 +7,7 @@ public class SceneTransition : MonoBehaviour
 {
     public void PlayGame()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene("floor_1");
     }
 
     public void QuitGame()
