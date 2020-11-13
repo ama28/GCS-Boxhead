@@ -13,6 +13,7 @@ public class Boss : MonoBehaviour
     public float shootPeriod;
     private float timer;
     [SerializeField] private Transform fireball;
+    public Transform fireballPosition;
 
     void Start()
     {
@@ -37,7 +38,7 @@ public class Boss : MonoBehaviour
 
     void Shoot(Vector3 dir)
     {
-        Transform bulletTransform = Instantiate(fireball, transform.position, Quaternion.identity);
+        Transform bulletTransform = Instantiate(fireball, fireballPosition.position, Quaternion.identity);
         bulletTransform.GetComponent<Fireball>().setup(dir);
     }
 
