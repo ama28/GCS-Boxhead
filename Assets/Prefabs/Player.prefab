@@ -1350,6 +1350,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1379054389506273999}
   - component: {fileID: 1379054389506273998}
+  - component: {fileID: 1960188747}
   m_Layer: 0
   m_Name: Guns
   m_TagString: Untagged
@@ -1422,6 +1423,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1960188747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1379054389506273984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a6471d2b464c384ba537497c886b96f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pfBullet: {fileID: 6711168111432735628, guid: b868c2974089f4474b97618f35927d9c,
+    type: 3}
+  player: {fileID: 9036537255258818955}
 --- !u!1 &1379054389577275678
 GameObject:
   m_ObjectHideFlags: 0
@@ -2005,6 +2021,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1379054389759287633}
   - component: {fileID: 1379054389759287632}
+  - component: {fileID: 1167806085}
   m_Layer: 0
   m_Name: Gun (1)
   m_TagString: Untagged
@@ -2077,6 +2094,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1167806085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1379054389759287634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a6471d2b464c384ba537497c886b96f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pfBullet: {fileID: 6711168111432735628, guid: b868c2974089f4474b97618f35927d9c,
+    type: 3}
+  player: {fileID: 9036537255258818955}
 --- !u!1 &1379054389823731552
 GameObject:
   m_ObjectHideFlags: 0
@@ -2251,6 +2283,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1379054389880301984}
   - component: {fileID: 1379054389880301999}
+  - component: {fileID: 1432803417}
   m_Layer: 0
   m_Name: Gun
   m_TagString: Untagged
@@ -2323,6 +2356,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1432803417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1379054389880301985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a6471d2b464c384ba537497c886b96f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pfBullet: {fileID: 6711168111432735628, guid: b868c2974089f4474b97618f35927d9c,
+    type: 3}
+  player: {fileID: 9036537255258818955}
 --- !u!1 &1379054389903527093
 GameObject:
   m_ObjectHideFlags: 0
@@ -2370,6 +2418,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1379054389942013780}
   - component: {fileID: 1379054389942013779}
+  - component: {fileID: 370272598}
   m_Layer: 0
   m_Name: Guns
   m_TagString: Untagged
@@ -2442,6 +2491,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &370272598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1379054389942013781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a6471d2b464c384ba537497c886b96f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pfBullet: {fileID: 6711168111432735628, guid: b868c2974089f4474b97618f35927d9c,
+    type: 3}
+  player: {fileID: 9036537255258818955}
 --- !u!1 &1379054389984254960
 GameObject:
   m_ObjectHideFlags: 0
@@ -2534,6 +2598,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1379054389997632396}
   - component: {fileID: 1379054389997632395}
+  - component: {fileID: 779523998}
   m_Layer: 0
   m_Name: PISTOL
   m_TagString: Untagged
@@ -2606,6 +2671,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &779523998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1379054389997632397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a6471d2b464c384ba537497c886b96f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pfBullet: {fileID: 6711168111432735628, guid: b868c2974089f4474b97618f35927d9c,
+    type: 3}
+  player: {fileID: 9036537255258818955}
 --- !u!1 &1379054390040193750
 GameObject:
   m_ObjectHideFlags: 0
@@ -3190,6 +3270,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1379054390358643300}
   - component: {fileID: 1379054390358643299}
+  - component: {fileID: 366461360}
   m_Layer: 0
   m_Name: Guns
   m_TagString: Untagged
@@ -3262,6 +3343,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &366461360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1379054390358643301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a6471d2b464c384ba537497c886b96f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pfBullet: {fileID: 6711168111432735628, guid: b868c2974089f4474b97618f35927d9c,
+    type: 3}
+  player: {fileID: 9036537255258818955}
 --- !u!1 &1379054390390177168
 GameObject:
   m_ObjectHideFlags: 0
@@ -3354,6 +3450,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1379054390392240704}
   - component: {fileID: 1379054390392240719}
+  - component: {fileID: 1551138483}
   m_Layer: 0
   m_Name: Guns
   m_TagString: Untagged
@@ -3426,6 +3523,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1551138483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1379054390392240705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a6471d2b464c384ba537497c886b96f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pfBullet: {fileID: 6711168111432735628, guid: b868c2974089f4474b97618f35927d9c,
+    type: 3}
+  player: {fileID: 9036537255258818955}
 --- !u!1 &1379054390517387688
 GameObject:
   m_ObjectHideFlags: 0
@@ -4010,6 +4122,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1379054390839615437}
   - component: {fileID: 1379054390839615436}
+  - component: {fileID: 466231511}
   m_Layer: 0
   m_Name: Pistol
   m_TagString: Untagged
@@ -4081,6 +4194,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &466231511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1379054390839615438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a6471d2b464c384ba537497c886b96f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pfBullet: {fileID: 6711168111432735628, guid: b868c2974089f4474b97618f35927d9c,
+    type: 3}
+  player: {fileID: 9036537255258818955}
 --- !u!1 &1379054390853421472
 GameObject:
   m_ObjectHideFlags: 0
@@ -4896,11 +5024,11 @@ GameObject:
   - component: {fileID: 9036537255258818958}
   - component: {fileID: 9036537255258818957}
   - component: {fileID: 9036537255258818956}
-  - component: {fileID: 9036537255258818992}
   - component: {fileID: 9036537255258818959}
   - component: {fileID: 9036537255258818993}
   - component: {fileID: 9036537255258818994}
   - component: {fileID: 4601320363376868774}
+  - component: {fileID: 1915176188}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -5000,22 +5128,6 @@ MonoBehaviour:
   facingDir: {x: 0, y: 0}
   stopped: 0
   dPad: 0
---- !u!114 &9036537255258818992
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9036537255258818955}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88c371e0d07f24a3da4f4bc51a4c1718, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pfBullet: {fileID: 6711168111432735628, guid: b868c2974089f4474b97618f35927d9c,
-    type: 3}
-  gunshot: {fileID: 4601320363376868774}
-  HP: 10000
 --- !u!50 &9036537255258818959
 Rigidbody2D:
   serializedVersion: 4
@@ -5178,6 +5290,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1915176188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9036537255258818955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c789b2a9f3dd347cd94a8b2f5259bbf6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sortingOrderBase: 5000
+  myRenderer: {fileID: 0}
 --- !u!1 &9036537255904991767
 GameObject:
   m_ObjectHideFlags: 0

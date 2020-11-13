@@ -7,9 +7,6 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private Transform pfBullet;
     [SerializeField] private AudioSource gunshot;
-    private Vector3 pToMouse;
-    private Vector3 bulletStart;
-    public float HP = 10000; //temporary (need to add HP code from David)
 
     // Start is called before the first frame update
     void Start()
@@ -33,11 +30,6 @@ public class PlayerController : MonoBehaviour
         Transform bulletTransform = Instantiate(pfBullet, transform.position, Quaternion.identity);
         bulletTransform.GetComponent<Bullet>().setup(moveInput);
         gunshot.Play();
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "Fireball") this.HP -= 1;
     }
 }
 

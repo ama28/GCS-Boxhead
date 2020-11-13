@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class Reset : MonoBehaviour
 {
     public GameObject EndPanel;
+    public string startScene;
     // Start is called before the first frame update
     public void OnDeath()
     {
@@ -18,6 +19,6 @@ public class Reset : MonoBehaviour
     {
         Time.timeScale = 1;
         DataManager.Instance.Initialize();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(startScene);
     }
 }

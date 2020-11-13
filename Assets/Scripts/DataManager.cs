@@ -15,7 +15,6 @@ public class DataManager : Singleton<DataManager>
     void Start()
     {
         Initialize();
-        DontDestroyOnLoad(gameObject);
     }
 
     public void Initialize()
