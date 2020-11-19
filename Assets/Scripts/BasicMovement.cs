@@ -9,6 +9,15 @@ public class BasicMovement : MonoBehaviour
     private Vector2 moveVelocity;
     public Animator animator;
 
+<<<<<<< Updated upstream
+=======
+    public Vector2 facingDir;
+
+    public bool stopped;
+    public bool dPad;
+
+
+>>>>>>> Stashed changes
     // Start is called before the first frame update
     void Start()
     {

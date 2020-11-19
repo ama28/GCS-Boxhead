@@ -1,0 +1,254 @@
+fileFormatVersion: 2
+guid: 4980d4338fee0f640adcfe38d63b192b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4072968761344467003
+    second: Zombie 4_0
+  - first:
+      213: -1392780006617412655
+    second: Zombie 4_1
+  - first:
+      213: 8716668344040618827
+    second: Zombie 4_2
+  - first:
+      213: -5777526715606200584
+    second: Zombie 4_3
+  - first:
+      213: 1084991733103122675
+    second: Zombie 4_4
+  - first:
+      213: 8538134594345126741
+    second: Zombie 4_5
+  - first:
+      213: -8945212684660507724
+    second: Zombie 4_6
+  - first:
+      213: 7987598689049487529
+    second: Zombie 4_7
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 500
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Zombie 4_0
+      rect:
+        serializedVersion: 2
+        x: 2624
+        y: 3459
+        width: 240
+        height: 357
+      alignment: 9
+      pivot: {x: 0.3562439, y: 0.16368501}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3023394287168830800000000000000
+      internalID: 4072968761344467003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie 4_1
+      rect:
+        serializedVersion: 2
+        x: 2046
+        y: 3069
+        width: 320
+        height: 357
+      alignment: 9
+      pivot: {x: 0.12048645, y: 0.17914793}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1db8d4796f9dbace0800000000000000
+      internalID: -1392780006617412655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie 4_3
+      rect:
+        serializedVersion: 2
+        x: 3230
+        y: 2949
+        width: 319
+        height: 360
+      alignment: 9
+      pivot: {x: 0.114970334, y: 0.174155}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fe86f3101a12dfa0800000000000000
+      internalID: -5777526715606200584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie 4_5
+      rect:
+        serializedVersion: 2
+        x: 2632
+        y: 2451
+        width: 372
+        height: 624
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55b4a643d2c8d7670800000000000000
+      internalID: 8538134594345126741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie 4_6
+      rect:
+        serializedVersion: 2
+        x: 2266
+        y: 2105
+        width: 160
+        height: 211
+      alignment: 9
+      pivot: {x: 0.5344986, y: 0.7681601}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bbfd7205783cd380800000000000000
+      internalID: -8945212684660507724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie 4_7
+      rect:
+        serializedVersion: 2
+        x: 3230
+        y: 2005
+        width: 161
+        height: 208
+      alignment: 9
+      pivot: {x: 0.55999947, y: 0.75212216}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a8ab2500b6a9de60800000000000000
+      internalID: 7987598689049487529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
