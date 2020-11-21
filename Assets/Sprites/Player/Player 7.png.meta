@@ -1,0 +1,275 @@
+fileFormatVersion: 2
+guid: c21d0ed9d49c9724384062181fcbc0d9
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6686404578715551869
+    second: Player 7_0
+  - first:
+      213: -6213605024294907387
+    second: Player 7_1
+  - first:
+      213: -8785767655832308667
+    second: Player 7_2
+  - first:
+      213: 2019362656688300944
+    second: Player 7_3
+  - first:
+      213: -220228942818651158
+    second: Player 7_4
+  - first:
+      213: 9201691906256424296
+    second: Player 7_5
+  - first:
+      213: 8396846719485453002
+    second: Player 7_6
+  - first:
+      213: -7531769300099351840
+    second: Player 7_7
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 500
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Player 7_0
+      rect:
+        serializedVersion: 2
+        x: 2225
+        y: 3075
+        width: 316
+        height: 360
+      alignment: 9
+      pivot: {x: 0.8895503, y: 0.87579346}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3873d15367e1533a0800000000000000
+      internalID: -6686404578715551869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player 7_1
+      rect:
+        serializedVersion: 2
+        x: 2987
+        y: 3297
+        width: 240
+        height: 358
+      alignment: 9
+      pivot: {x: 0.4441386, y: 0.19019577}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 502d158c627d4c9a0800000000000000
+      internalID: -6213605024294907387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player 7_3
+      rect:
+        serializedVersion: 2
+        x: 1973
+        y: 2711
+        width: 120
+        height: 147
+      alignment: 9
+      pivot: {x: 0.8348328, y: 0.48177913}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 093689023a7360c10800000000000000
+      internalID: 2019362656688300944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player 7_4
+      rect:
+        serializedVersion: 2
+        x: 2919
+        y: 2498
+        width: 372
+        height: 624
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae3d80e71f691fcf0800000000000000
+      internalID: -220228942818651158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player 7_5
+      rect:
+        serializedVersion: 2
+        x: 3693
+        y: 2694
+        width: 117
+        height: 387
+      alignment: 9
+      pivot: {x: 0.48958334, y: 0.90626323}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86d400d390af2bf70800000000000000
+      internalID: 9201691906256424296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player 7_6
+      rect:
+        serializedVersion: 2
+        x: 2620
+        y: 2152
+        width: 161
+        height: 211
+      alignment: 9
+      pivot: {x: 0.50831896, y: 0.7539016}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac2a55c5a97978470800000000000000
+      internalID: 8396846719485453002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player 7_7
+      rect:
+        serializedVersion: 2
+        x: 3476
+        y: 2152
+        width: 161
+        height: 211
+      alignment: 9
+      pivot: {x: 0.50831896, y: 0.7539016}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0eab2610ab7c97790800000000000000
+      internalID: -7531769300099351840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
