@@ -42,8 +42,8 @@ public class Devil : MonoBehaviour
             Shoot(dir);
             this.timer = 0;
         }
-        //animator.SetFloat("Horizontal", dir.x);
-        //animator.SetFloat("Vertical", dir.y);
+        animator.SetFloat("Horizontal", dir.x);
+        animator.SetFloat("Vertical", dir.y);
         if (CurrentHP <= 0) Destroy(gameObject);
     }
 
