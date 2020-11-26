@@ -12,7 +12,7 @@ public class DataManager : Singleton<DataManager>
 
     public GameEvent Death;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         Initialize();
     }
@@ -44,6 +44,11 @@ public class DataManager : Singleton<DataManager>
 
     public void changeHealth(int change)
     {
+        if(CurrentHealth + change > MaxHealth)
+        {
+            CurrentHealth = MaxHealth;
+        }
+
         CurrentHealth += change;
         if(CurrentHealth <= 0)
         {
