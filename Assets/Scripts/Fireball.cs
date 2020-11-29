@@ -14,6 +14,8 @@ public class Fireball : MonoBehaviour
     public float moveSpeed = 80f;
     public float timeAlive = 30f;
 
+    public GameObject FireEffect;
+
     public void setup(Vector3 dir)
     {
         this.dir = dir.normalized;
@@ -46,9 +48,11 @@ public class Fireball : MonoBehaviour
             collider.enabled = false;
             Destroy(body);
             renderer.enabled = false;
+            StartCoroutine(fireEffect());
             DataManager.Instance.changeHealth(-20);
+            
         }
-        Destroy(gameObject, 0.5f);
+        StartCoroutine(fireEffect());
     }
 
     //return abs degrees angle from vector (float)
@@ -58,4 +62,14 @@ public class Fireball : MonoBehaviour
         if (n < 0) n += 360;
         return n;
     }
-}
+
+    IEnumerator fireEffect()
+    {
+        
+        FireEffect.SetActive(true);
+        yield return new WaitForSeconds(0.1f);
+        Destroy(gameObject);
+
+    }
+
+   }

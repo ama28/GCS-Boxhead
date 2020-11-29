@@ -18,6 +18,7 @@ public class BasicMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        facingDir = new Vector2(0, -1);
 
     }
 
