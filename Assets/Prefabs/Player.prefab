@@ -9525,7 +9525,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1202761145
 Transform:
   m_ObjectHideFlags: 0
@@ -25948,7 +25948,7 @@ MonoBehaviour:
   pfBullet: {fileID: 6711168111432735628, guid: b868c2974089f4474b97618f35927d9c,
     type: 3}
   player: {fileID: 9036537255258818955}
-  BlowBackEffect: {fileID: 0}
+  BlowBackEffect: {fileID: 1202761144}
   animator: {fileID: 2123183557}
   Shooter: 0
   delayOn: 0
@@ -28100,7 +28100,7 @@ MonoBehaviour:
     type: 3}
   player: {fileID: 9036537255258818955}
   BlowBackEffect: {fileID: 1956874204}
-  animator: {fileID: 0}
+  animator: {fileID: 1123607165}
   Shooter: 0
   delayOn: 0
 --- !u!1 &1379054390853421472
@@ -28421,7 +28421,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1379054390920177525
 Transform:
   m_ObjectHideFlags: 0
@@ -28943,7 +28943,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1379054391020389764
 Transform:
   m_ObjectHideFlags: 0
@@ -38508,7 +38508,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5246506037842266824
 Transform:
   m_ObjectHideFlags: 0
