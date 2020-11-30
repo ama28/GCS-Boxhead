@@ -14,6 +14,8 @@ public class BasicMovement : MonoBehaviour
     public bool stopped;
     public bool dPad;
 
+    public int MainGunNum = 1;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +28,30 @@ public class BasicMovement : MonoBehaviour
     {
         float x = Input.GetAxisRaw("Horizontal");
         float y = Input.GetAxisRaw("Vertical");
-        
+
+
+        if (Input.GetKeyDown("1"))
+        {
+            MainGunNum = 1;
+
+        }
+
+        if (Input.GetKeyDown("2"))
+        {
+            MainGunNum = 2;
+
+        }
+
+        if (Input.GetKeyDown("3"))
+        {
+            MainGunNum = 3;
+
+        }
+
+
+
+
+
         if ((x != 0) || (y != 0))
         {
             animator.SetFloat("Horizontal", x);

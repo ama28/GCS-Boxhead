@@ -16,6 +16,13 @@ public class FirePistol : MonoBehaviour
 
     public bool delayOn;
 
+
+    public int gunNum;
+
+    public Vector2 playerDir;
+
+    public bool RapidOn;
+    public bool Shootvalve;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,17 +34,78 @@ public class FirePistol : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+      gunNum =  player.GetComponent<BasicMovement>().MainGunNum;
+
         animator.SetBool("Shot", Shooter);
+
+        
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (delayOn == false)
+            Vector2 playerDir = player.GetComponent<BasicMovement>().facingDir;
+
+            
+
+            if (gunNum == 1)
             {
-                delayOn = true;
+                if (delayOn == false)
+                {
+                    delayOn = true;
+                    
+                    //this.Shoot(playerDir);
+                    StartCoroutine(PistolSpark(playerDir));
+                }
+            }
+
+            if (gunNum == 2)
+            {
+
+                RapidOn = true;
+            }
+
+            if (gunNum == 3)
+            {
+
+                float arcX;
+                float arcY;
+
+                if (playerDir.x == 1 || playerDir.x == -1 && playerDir.y == 0)
+                {
+                    arcX = 0;
+                    arcY = 0.5f;
+                }
+
+                else
+                {
+                    arcX = 0.5f;
+                    arcY = 0;
+                }
+
+                StartCoroutine(ShotSpark(new Vector2(playerDir.x, playerDir.y), new Vector2(playerDir.x + arcX, playerDir.y + arcY), new Vector2(playerDir.x - arcX, playerDir.y - arcY)));
+
+            }
+        }
+
+        
+
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+
+            RapidOn = false;
+
+        }
+
+
+        if (Shootvalve == false)
+        {
+            if (RapidOn == true)
+            {
                 Vector2 playerDir = player.GetComponent<BasicMovement>().facingDir;
-                //this.Shoot(playerDir);
-                StartCoroutine(CreateSpark(playerDir));
+                StartCoroutine(MachineSpark(playerDir));
             }
-            }
+
+        }
     }
 
     void Shoot(Vector2 moveInput)
@@ -46,7 +114,7 @@ public class FirePistol : MonoBehaviour
         
     }
 
-    IEnumerator CreateSpark(Vector2 moveInput)
+    IEnumerator PistolSpark(Vector2 moveInput)
     {
         Shooter = true;
         Transform bulletTransform = Instantiate(pfBullet, transform.position, Quaternion.identity);
@@ -61,5 +129,44 @@ public class FirePistol : MonoBehaviour
 
 
     }
+
+    IEnumerator MachineSpark(Vector2 moveInput)
+    {
+        Shootvalve = true;
+        Transform bulletTransform = Instantiate(pfBullet, transform.position, Quaternion.identity);
+        bulletTransform.GetComponent<Bullet>().setup(moveInput);
+        gunshot.Play();
+
+        
+        yield return new WaitForSeconds(0.05f);
+        Shootvalve = false;
+        
+        
+
+
+    }
+
+    IEnumerator ShotSpark(Vector2 shot1, Vector2 shot2, Vector2 shot3)
+    {
+        
+        Transform bulletTransform1 = Instantiate(pfBullet, transform.position, Quaternion.identity);
+        bulletTransform1.GetComponent<Bullet>().setup(shot1);
+
+        Transform bulletTransform2 = Instantiate(pfBullet, transform.position, Quaternion.identity);
+        bulletTransform2.GetComponent<Bullet>().setup(shot2);
+
+        Transform bulletTransform3 = Instantiate(pfBullet, transform.position, Quaternion.identity);
+        bulletTransform3.GetComponent<Bullet>().setup(shot3);
+        gunshot.Play();
+
+
+        yield return new WaitForSeconds(0.1f);
+        
+
+
+
+
+    }
+
 
 }
