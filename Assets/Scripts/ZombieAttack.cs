@@ -9,6 +9,7 @@ public class ZombieAttack : MonoBehaviour
     public int damage;
     private AudioSource audio;
     public AudioClip playerHurtNoise;
+    public bool IsTrig;
 
     void Start() {
         audio = this.GetComponent(typeof(AudioSource)) as AudioSource;
@@ -22,6 +23,24 @@ public class ZombieAttack : MonoBehaviour
             audio.clip = playerHurtNoise;
             audio.pitch = 1 + Random.Range(-0.1f, 0.1f);
             audio.Play();
+        }
+    }
+
+
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            if (IsTrig == true)
+            {
+                Debug.Log("hit!");
+                player = other.gameObject;
+                audio.volume = 0.5f;
+                audio.clip = playerHurtNoise;
+                audio.pitch = 1 + Random.Range(-0.1f, 0.1f);
+                audio.Play();
+            }
         }
     }
 

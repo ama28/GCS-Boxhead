@@ -12451,47 +12451,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 466231511, guid: 80620f3490aa7fe42901099d9d0d6d72, type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 1123607165}
-    - target: {fileID: 523541612, guid: 80620f3490aa7fe42901099d9d0d6d72, type: 3}
-      propertyPath: InitialModule.startSize.scalar
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1167806085, guid: 80620f3490aa7fe42901099d9d0d6d72, type: 3}
-      propertyPath: BlowBackEffect
-      value: 
-      objectReference: {fileID: 1202761144}
-    - target: {fileID: 1202761144, guid: 80620f3490aa7fe42901099d9d0d6d72, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1379054390882386753, guid: 80620f3490aa7fe42901099d9d0d6d72,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1379054390920177526, guid: 80620f3490aa7fe42901099d9d0d6d72,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1379054390957669417, guid: 80620f3490aa7fe42901099d9d0d6d72,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1379054391020389765, guid: 80620f3490aa7fe42901099d9d0d6d72,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8918912900415133255, guid: 80620f3490aa7fe42901099d9d0d6d72,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 9036537255258818955, guid: 80620f3490aa7fe42901099d9d0d6d72,
         type: 3}
       propertyPath: m_Name
@@ -12554,12 +12513,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80620f3490aa7fe42901099d9d0d6d72, type: 3}
---- !u!95 &1123607165 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 1123607165, guid: 80620f3490aa7fe42901099d9d0d6d72,
-    type: 3}
-  m_PrefabInstance: {fileID: 1123607162}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1123770119
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13521,12 +13474,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3372205009310901881, guid: af620cced2db44569a348184d94d7f07,
     type: 3}
   m_PrefabInstance: {fileID: 1978801015}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1202761144 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1202761144, guid: 80620f3490aa7fe42901099d9d0d6d72,
-    type: 3}
-  m_PrefabInstance: {fileID: 1123607162}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1205711477 stripped
 Transform:
