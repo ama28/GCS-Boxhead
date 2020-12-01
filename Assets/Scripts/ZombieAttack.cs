@@ -7,7 +7,6 @@ public class ZombieAttack : MonoBehaviour
 {
     private GameObject player;
     public int damage;
-    public AudioClip playerHurtNoise;
     public bool IsTrig;
 
     private void OnCollisionEnter2D(Collision2D collision)
