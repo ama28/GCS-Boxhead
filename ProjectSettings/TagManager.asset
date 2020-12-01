@@ -7,6 +7,10 @@ TagManager:
   - Enemy
   - Bullet
   - Fireball
+  - door
+  - normalkey
+  - boss_door
+  - boss_key
   layers:
   - Default
   - TransparentFX
