@@ -44,8 +44,8 @@ public class BossHealth : MonoBehaviour
             yield return new WaitForSeconds(0.01f);
         }
         whiteFade.GetComponent<FadeIn>().fadeIn(2.1f);
-        //3.4 seconds of shake
-        for(int i = 0; i < 210; i ++) {
+        //3.6 seconds of shake
+        for(int i = 0; i < 240; i ++) {
             shake(4f, cameraOriginalPos);
             yield return new WaitForSeconds(0.01f);
         }
