@@ -27,8 +27,9 @@ public class MusicLooper : MonoBehaviour
             audio.clip = levelMusic;
             loopSamples = 8173701;
             startDelay = 594200;
+            audio.Play();
         }
-        audio.Play();
+        
     }
 
     // Update is called once per frame
@@ -37,6 +38,5 @@ public class MusicLooper : MonoBehaviour
         if(audio.timeSamples > loopSamples) {
         	audio.timeSamples = startDelay;
         }
-        Debug.Log(audio.timeSamples);
     }
 }
