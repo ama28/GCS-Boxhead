@@ -11,6 +11,7 @@ TagManager:
   - normalkey
   - boss_door
   - boss_key
+  - NoClip
   layers:
   - Default
   - TransparentFX
