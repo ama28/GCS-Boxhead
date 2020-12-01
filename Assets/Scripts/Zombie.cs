@@ -12,8 +12,6 @@ public class Zombie : MonoBehaviour
     private Transform target;
     public Animator animator;
     public Image healthbar;
-    public AudioClip[] zombieHurtNoises;
-    private AudioSource audio;
 
     public float MaxHP;
     private float CurrentHP;
@@ -22,7 +20,6 @@ public class Zombie : MonoBehaviour
     {
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         CurrentHP = MaxHP;
-        audio = this.GetComponent(typeof(AudioSource)) as AudioSource;
     }
 
     // Update is called once per frame
@@ -42,14 +39,12 @@ public class Zombie : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Bullet") CurrentHP -= 1;
-        healthbar.fillAmount = CurrentHP / MaxHP;
-
-        //Playing the audio
-        audio.volume = 0.4f;
-        audio.clip = zombieHurtNoises[Random.Range(0, zombieHurtNoises.Length-1)];
-        audio.pitch = 1 + Random.Range(-0.1f, 0.1f);
-        audio.Play();
+        if (collision.gameObject.tag == "Bullet") 
+        {
+            CurrentHP -= 1;
+            healthbar.fillAmount = CurrentHP / MaxHP;
+            AudioManager.PlaySound(AudioManager.Sound.ZombieHurt, transform.position);
+        }
     }
 }
 

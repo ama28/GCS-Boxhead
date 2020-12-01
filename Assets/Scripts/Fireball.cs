@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Fireball : MonoBehaviour
 {
-    private AudioSource audio;
     private Rigidbody2D body;
     private BoxCollider2D collider;
     private SpriteRenderer renderer;
@@ -18,7 +17,6 @@ public class Fireball : MonoBehaviour
     {
         this.dir = dir.normalized;
         transform.eulerAngles = new Vector3(0, 0, getAngleFromVector(dir) - 90);
-        audio = this.GetComponent(typeof(AudioSource)) as AudioSource;
         body = this.GetComponent(typeof(Rigidbody2D)) as Rigidbody2D;
         collider = this.GetComponent(typeof(BoxCollider2D)) as BoxCollider2D;
         renderer = this.GetComponent(typeof(SpriteRenderer)) as SpriteRenderer;
@@ -39,10 +37,7 @@ public class Fireball : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             //audio
-            audio.volume = 0.5f;
-            audio.clip = playerHurtNoise;
-            audio.pitch = 1 + Random.Range(-0.1f, 0.1f);
-            audio.Play();
+            AudioManager.PlaySound(AudioManager.Sound.HumanHurt, transform.position);
             collider.enabled = false;
             Destroy(body);
             renderer.enabled = false;

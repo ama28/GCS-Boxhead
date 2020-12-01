@@ -5029,6 +5029,7 @@ GameObject:
   - component: {fileID: 9036537255258818994}
   - component: {fileID: 4601320363376868774}
   - component: {fileID: 1915176188}
+  - component: {fileID: -4502803306723966376}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -5304,6 +5305,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sortingOrderBase: 5000
   myRenderer: {fileID: 0}
+--- !u!81 &-4502803306723966376
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9036537255258818955}
+  m_Enabled: 1
 --- !u!1 &9036537255904991767
 GameObject:
   m_ObjectHideFlags: 0
@@ -5401,7 +5410,6 @@ GameObject:
   m_Component:
   - component: {fileID: 9036537256330536912}
   - component: {fileID: 9036537256330536751}
-  - component: {fileID: 9036537256330536749}
   - component: {fileID: 9036537256330536750}
   - component: {fileID: 8019048446471261163}
   m_Layer: 8
@@ -5468,14 +5476,6 @@ Camera:
   m_OcclusionCulling: 0
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &9036537256330536749
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9036537256330536748}
-  m_Enabled: 1
 --- !u!82 &9036537256330536750
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5585,7 +5585,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audio: {fileID: 9036537256330536750}
-  bossMusic: {fileID: 8300000, guid: 2676e73a0aa3c4fdaabfcc7178f2c7a8, type: 3}
+  bossMusic: {fileID: 8300000, guid: 5e65d0d5f723b4c5484ff1880fce7e67, type: 3}
   levelMusic: {fileID: 8300000, guid: 0a2f2082c7e7a43aabc32457543f7f51, type: 3}
   loopSamples: 8173701
   startDelay: 594200
