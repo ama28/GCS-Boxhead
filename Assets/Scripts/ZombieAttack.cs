@@ -21,7 +21,7 @@ public class ZombieAttack : MonoBehaviour
 
     //Unsure what this does but it causes the gun to stop shooting so
     //I'm commenting it out - Will
-    /*
+    
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
@@ -35,7 +35,7 @@ public class ZombieAttack : MonoBehaviour
             }
         }
     }
-    */
+    
 
     private void Update()
     {
