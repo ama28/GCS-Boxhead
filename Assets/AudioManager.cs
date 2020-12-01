@@ -51,14 +51,20 @@ public static class AudioManager
         //adjusting the sound effect via volume, randomization or pitch variation
         AudioClip clip = soundEffect.clips[Random.Range(0, soundEffect.clips.Length-1)];
         audioSource.volume = soundEffect.volume;
-        audioSource.spatialBlend = 0.6f;
-        audioSource.spread = 174f;
+        if(soundEffect.spatial) {
+            audioSource.spatialBlend = 0.6f;
+            audioSource.spread = 174f;
+        } else {
+            audioSource.spatialBlend = 0;
+        }
         if(soundEffect.pitchVariation) {
             audioSource.pitch = 1 + Random.Range(-0.1f, 0.1f);
+        } else {
+            audioSource.pitch = 1;
         }
 
         audioSource.PlayOneShot(clip);
-        Object.Destroy(soundGameObject, audioSource.clip.length);
+        //Object.Destroy(soundGameObject, audioSource.clip.length);
     }
 
     private static SoundAssets.SoundEffect GetSoundEffect(AudioManager.Sound name) {

@@ -24,6 +24,7 @@ public class SoundAssets : MonoBehaviour
         public float volume = 1f;
         public bool pitchVariation = false;
         public int delay = 0;
+        public bool spatial = false;
         public AudioClip[] clips;
     }
 }

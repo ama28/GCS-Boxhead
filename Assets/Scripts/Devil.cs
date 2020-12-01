@@ -44,7 +44,10 @@ public class Devil : MonoBehaviour
         }
         animator.SetFloat("Horizontal", dir.x);
         animator.SetFloat("Vertical", dir.y);
-        if (CurrentHP <= 0) Destroy(gameObject);
+        if (CurrentHP <= 0) {
+            AudioManager.PlaySound(AudioManager.Sound.ZombieDeath, transform.position);
+            Destroy(gameObject);
+        }
     }
 
     void Shoot(Vector3 dir)
@@ -55,8 +58,14 @@ public class Devil : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Bullet") CurrentHP -= 1;
-        healthbar.fillAmount = CurrentHP / MaxHP;
+        if (collision.gameObject.tag == "Bullet") 
+        {
+            CurrentHP -= 1;
+            healthbar.fillAmount = CurrentHP / MaxHP;
+            if(CurrentHP > 0) {
+            AudioManager.PlaySound(AudioManager.Sound.ZombieHurt, transform.position);
+            }
+        }
     }
 
 }

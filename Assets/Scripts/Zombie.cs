@@ -34,7 +34,10 @@ public class Zombie : MonoBehaviour
             animator.SetFloat("Vertical", dir.y);
         }
 
-        if (CurrentHP <= 0) Destroy(gameObject);
+        if (CurrentHP <= 0) {
+            AudioManager.PlaySound(AudioManager.Sound.ZombieDeath, transform.position);
+            Destroy(gameObject);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -43,7 +46,9 @@ public class Zombie : MonoBehaviour
         {
             CurrentHP -= 1;
             healthbar.fillAmount = CurrentHP / MaxHP;
+            if(CurrentHP > 0) {
             AudioManager.PlaySound(AudioManager.Sound.ZombieHurt, transform.position);
+            }
         }
     }
 }
