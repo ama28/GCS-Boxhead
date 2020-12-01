@@ -6,6 +6,7 @@ public class DataManager : Singleton<DataManager>
 {
     public int MaxHealth;
     private int CurrentHealth;
+    public bool invincible = false;
 
     public float InvincibleTime;
     private float CurrentTime;
@@ -19,6 +20,7 @@ public class DataManager : Singleton<DataManager>
 
     public void Initialize()
     {
+        invincible = false;
         CurrentHealth = MaxHealth;
         CurrentTime = 0;
     }
@@ -49,7 +51,7 @@ public class DataManager : Singleton<DataManager>
             CurrentHealth = MaxHealth;
         }
 
-        CurrentHealth += change;
+        if (!invincible) CurrentHealth += change;
         if(CurrentHealth <= 0)
         {
             Death.Raise();

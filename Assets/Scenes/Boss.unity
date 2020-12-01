@@ -144,7 +144,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &12613650
 RectTransform:
   m_ObjectHideFlags: 0
@@ -579,6 +579,41 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1379054389506273984, guid: 80620f3490aa7fe42901099d9d0d6d72,
+        type: 3}
+      propertyPath: m_Name
+      value: Gun
+      objectReference: {fileID: 0}
+    - target: {fileID: 1379054389759287634, guid: 80620f3490aa7fe42901099d9d0d6d72,
+        type: 3}
+      propertyPath: m_Name
+      value: Gun
+      objectReference: {fileID: 0}
+    - target: {fileID: 1379054389942013781, guid: 80620f3490aa7fe42901099d9d0d6d72,
+        type: 3}
+      propertyPath: m_Name
+      value: Gun
+      objectReference: {fileID: 0}
+    - target: {fileID: 1379054389997632397, guid: 80620f3490aa7fe42901099d9d0d6d72,
+        type: 3}
+      propertyPath: m_Name
+      value: Gun
+      objectReference: {fileID: 0}
+    - target: {fileID: 1379054390358643301, guid: 80620f3490aa7fe42901099d9d0d6d72,
+        type: 3}
+      propertyPath: m_Name
+      value: Gun
+      objectReference: {fileID: 0}
+    - target: {fileID: 1379054390392240705, guid: 80620f3490aa7fe42901099d9d0d6d72,
+        type: 3}
+      propertyPath: m_Name
+      value: Gun
+      objectReference: {fileID: 0}
+    - target: {fileID: 1379054390839615438, guid: 80620f3490aa7fe42901099d9d0d6d72,
+        type: 3}
+      propertyPath: m_Name
+      value: Gun
+      objectReference: {fileID: 0}
     - target: {fileID: 9036537255258818955, guid: 80620f3490aa7fe42901099d9d0d6d72,
         type: 3}
       propertyPath: m_Name
@@ -638,6 +673,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9036537256330536748, guid: 80620f3490aa7fe42901099d9d0d6d72,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9036537256330536750, guid: 80620f3490aa7fe42901099d9d0d6d72,
         type: 3}
@@ -2098,6 +2138,7 @@ MonoBehaviour:
   boss: {fileID: 105878265}
   whiteFade: {fileID: 339586135}
   MainCamera: {fileID: 930820352}
+  pistol: {fileID: 0}
 --- !u!1 &930820352 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9036537256330536748, guid: 80620f3490aa7fe42901099d9d0d6d72,
@@ -2816,6 +2857,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MainCamera: {fileID: 930820352}
   player: {fileID: 1842043241}
+  boss: {fileID: 105878265}
+  bossUI: {fileID: 12613649}
 --- !u!61 &1406775896
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -6,7 +6,8 @@ public class BossCutscene : MonoBehaviour
 {
     public GameObject MainCamera;
     public GameObject player;
-
+    public GameObject boss;
+    public GameObject bossUI;
     private float cameraOffset = 16f;
     private int cameraZoomOut = 7;
     private bool triggered = false;
@@ -38,6 +39,8 @@ public class BossCutscene : MonoBehaviour
         }
         MainCamera.transform.localPosition = cameraOriginalPos;
         player.GetComponent<BasicMovement>().enabled = true;
+        boss.GetComponent<Boss>().enabled = true;
+        bossUI.SetActive(true);
         //return to original with lifted camera
         while(cam.orthographicSize > 5 + 0.1 || MainCamera.transform.localPosition.y > cameraOffset + 0.1f) {
             cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, 5, Time.deltaTime * 2);

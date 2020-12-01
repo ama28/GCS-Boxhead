@@ -13,6 +13,7 @@ public class BossHealth : MonoBehaviour
     public GameObject boss;
     public GameObject whiteFade;
     public GameObject MainCamera;
+    public GameObject pistol;
 
     private bool alive = true;
 
@@ -25,15 +26,21 @@ public class BossHealth : MonoBehaviour
     void Update()
     {
         healthBar.fillAmount = (float) healthValue.value / maxHealth;
-        
+        if(alive) Debug.Log("here");
         if(healthValue.value <= 0 && alive)
         {
+            Debug.Log("DONE");
             StartCoroutine("BossDie");
             alive = false;
         }
     }
 
     IEnumerator BossDie() {
+        GameObject gun = GameObject.Find("Gun");
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        player.GetComponent<BasicMovement>().enabled = false;
+        DataManager.Instance.invincible = true;
+        gun.GetComponent<FirePistol>().enabled = false;
         boss.GetComponent<Boss>().enabled = false;
         bossImage.enabled = false;
         AudioManager.PlaySound(AudioManager.Sound.DogDeath, transform.position);

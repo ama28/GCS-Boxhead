@@ -25,6 +25,8 @@ public class Boss : MonoBehaviour
     {
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         timer = 0;
+        //the script starts deactivated until it gets activated by the cutscene
+        this.enabled = false;
     }
 
     // Update is called once per frame
