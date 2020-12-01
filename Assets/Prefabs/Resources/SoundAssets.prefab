@@ -46,21 +46,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundEffectClips:
   - name: 0
-    volume: 1
+    volume: 0.5
     pitchVariation: 0
     delay: 0
+    spatial: 0
     clips:
     - {fileID: 8300000, guid: 55a6d10dee5c14869b7ea925f7982e69, type: 3}
   - name: 1
-    volume: 1
+    volume: 0.6
     pitchVariation: 0
     delay: 0
+    spatial: 0
     clips:
     - {fileID: 8300000, guid: fcb9482d40b1e4a83ba00198dc245e30, type: 3}
   - name: 2
     volume: 0.4
     pitchVariation: 1
     delay: 0
+    spatial: 1
     clips:
     - {fileID: 8300000, guid: 381c79d13364c489ba5d05da6a90e7af, type: 3}
     - {fileID: 8300000, guid: ea415ac7b625e452292b3437520b9207, type: 3}
@@ -70,36 +73,42 @@ MonoBehaviour:
     volume: 0.5
     pitchVariation: 1
     delay: 0
+    spatial: 0
     clips:
     - {fileID: 8300000, guid: 686c3c3c07f334778846bd5a6b95c1d3, type: 3}
   - name: 4
-    volume: 1
+    volume: 0.8
     pitchVariation: 0
     delay: 0
+    spatial: 0
     clips:
     - {fileID: 8300000, guid: 7d60e1cff76984767bccb01c3692ae92, type: 3}
   - name: 5
-    volume: 1
+    volume: 0.8
     pitchVariation: 0
     delay: 0
+    spatial: 0
     clips:
     - {fileID: 8300000, guid: af1a02581c8b04aa692b4b9967d7b743, type: 3}
   - name: 6
-    volume: 1
+    volume: 0.8
     pitchVariation: 0
     delay: 0
+    spatial: 0
     clips:
     - {fileID: 8300000, guid: d4d9ecac319324813a1f25042a2212a8, type: 3}
   - name: 7
-    volume: 1
+    volume: 0.8
     pitchVariation: 0
     delay: 0
+    spatial: 0
     clips:
     - {fileID: 8300000, guid: 62e828864a8e04d8283c95f16de5bf6c, type: 3}
   - name: 8
-    volume: 1
-    pitchVariation: 0
+    volume: 0.5
+    pitchVariation: 1
     delay: 0
+    spatial: 1
     clips:
     - {fileID: 8300000, guid: 270bd73fb5dba48e78d4616be34a2de4, type: 3}
     - {fileID: 8300000, guid: ad09f467d02fc4a72bc91c1b50c09079, type: 3}

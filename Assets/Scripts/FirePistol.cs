@@ -5,7 +5,6 @@ using UnityEngine;
 public class FirePistol : MonoBehaviour
 {
     [SerializeField] private Transform pfBullet;
-    private AudioSource gunshot;
     [SerializeField] private GameObject player;
 
     public GameObject BlowBackEffect;
@@ -23,13 +22,6 @@ public class FirePistol : MonoBehaviour
 
     public bool RapidOn;
     public bool Shootvalve;
-    // Start is called before the first frame update
-    void Start()
-    {
-        gunshot = player.GetComponent<AudioSource>();
-        gunshot.volume = 0.5f;
-    }
-
 
     // Update is called once per frame
     void Update()
@@ -118,7 +110,7 @@ public class FirePistol : MonoBehaviour
         Shooter = true;
         Transform bulletTransform = Instantiate(pfBullet, transform.position, Quaternion.identity);
         bulletTransform.GetComponent<Bullet>().setup(moveInput);
-        gunshot.Play();
+        AudioManager.PlaySound(AudioManager.Sound.Pistol, transform.position);
 
         BlowBackEffect.SetActive(true);
         yield return new WaitForSeconds(0.1f);
@@ -134,7 +126,7 @@ public class FirePistol : MonoBehaviour
         Shootvalve = true;
         Transform bulletTransform = Instantiate(pfBullet, transform.position, Quaternion.identity);
         bulletTransform.GetComponent<Bullet>().setup(moveInput);
-        gunshot.Play();
+        AudioManager.PlaySound(AudioManager.Sound.Uzi, transform.position);
 
         
         yield return new WaitForSeconds(0.05f);
@@ -156,7 +148,8 @@ public class FirePistol : MonoBehaviour
 
         Transform bulletTransform3 = Instantiate(pfBullet, transform.position, Quaternion.identity);
         bulletTransform3.GetComponent<Bullet>().setup(shot3);
-        gunshot.Play();
+        AudioManager.PlaySound(AudioManager.Sound.Pistol, transform.position);
+        
 
 
         yield return new WaitForSeconds(0.1f);

@@ -53,6 +53,8 @@ public class DataManager : Singleton<DataManager>
         if(CurrentHealth <= 0)
         {
             Death.Raise();
+        } else if(CurrentHealth < MaxHealth/4) {
+            AudioManager.PlaySound(AudioManager.Sound.LowHealth, transform.position);
         }
     }
 

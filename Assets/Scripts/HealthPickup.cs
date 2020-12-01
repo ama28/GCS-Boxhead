@@ -11,6 +11,7 @@ public class HealthPickup : MonoBehaviour
         {
             particles.GetComponent<ParticleSystem>().Play();
             DataManager.Instance.changeHealth(3);
+            AudioManager.PlaySound(AudioManager.Sound.HealthPickup, transform.position);
             Destroy(gameObject, particles.GetComponent<ParticleSystem>().startLifetime);
         }
     }
