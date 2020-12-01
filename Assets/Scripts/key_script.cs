@@ -22,12 +22,14 @@ public class key_script : MonoBehaviour
         if (collision.gameObject.tag == "normalkey")
         {
             normal_key_count++;
+            keyScore.stairKeys += 1;
             Destroy(collision.gameObject);
         }
 
         if (collision.gameObject.tag == "boss_key")
         {
             boss_key_count++;
+            keyScore.bossKeys += 1;
             Destroy(collision.gameObject);
         }
     }

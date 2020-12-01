@@ -8,6 +8,7 @@ public class SceneTransition : MonoBehaviour
     public void PlayGame()
     {
         SceneManager.LoadScene("floor_1");
+        Time.timeScale = 1f;
     }
 
     public void QuitGame()

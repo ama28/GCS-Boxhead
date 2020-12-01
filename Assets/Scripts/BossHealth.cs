@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class BossHealth : MonoBehaviour
 {
     public Int healthValue;
-    public int maxHealth; 
+    public int maxHealth;
     public Image healthBar;
 
     void Start()
@@ -18,10 +18,10 @@ public class BossHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        healthBar.fillAmount = (float) healthValue.value / maxHealth;
-        if(healthValue.value == 0)
+        healthBar.fillAmount = (float)healthValue.value / maxHealth;
+        if (healthValue.value == 0)
         {
-            SceneManager.LoadScene("floor_1");
+            //SceneManager.LoadScene("floor_1");
             DataManager.Instance.Initialize();
         }
     }
