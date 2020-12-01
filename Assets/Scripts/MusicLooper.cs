@@ -21,13 +21,12 @@ public class MusicLooper : MonoBehaviour
     {
         if(SceneManager.GetActiveScene().name == "Boss") {
             audio.clip = bossMusic;
-            audio.volume = 0.5f;
-            //Add in boss music loop timing here!
+            loopSamples = 5380200;
+            startDelay = 2006550;
         } else {
             audio.clip = levelMusic;
             loopSamples = 8173701;
             startDelay = 594200;
-            audio.volume = 1f;
         }
         audio.Play();
     }
@@ -38,5 +37,6 @@ public class MusicLooper : MonoBehaviour
         if(audio.timeSamples > loopSamples) {
         	audio.timeSamples = startDelay;
         }
+        Debug.Log(audio.timeSamples);
     }
 }
