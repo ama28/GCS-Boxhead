@@ -12,6 +12,8 @@ TagManager:
   - boss_door
   - boss_key
   - NoClip
+  - floor2trans
+  - UI
   layers:
   - Default
   - TransparentFX

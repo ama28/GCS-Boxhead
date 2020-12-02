@@ -8,11 +8,6 @@ public class EndMenu : MonoBehaviour
     public GameObject endMenuUI;
     public GameObject player;
 
-    private void Update()
-    {
-
-    }
-
     public void Resume()
     {
         endMenuUI.SetActive(false);

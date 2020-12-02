@@ -20,11 +20,11 @@ public class keyScore : MonoBehaviour
     {
         if (isBossKey)
         {
-            score.text = bossKeys + "/3";
+            score.text = bossKeys + "/5";
         }
         else
         {
-            score.text = stairKeys + "/4";
+            score.text = stairKeys + "/5";
         }
     }
 }
