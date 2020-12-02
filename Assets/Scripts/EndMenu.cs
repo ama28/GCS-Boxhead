@@ -7,14 +7,10 @@ public class EndMenu : MonoBehaviour
 {
     public GameObject endMenuUI;
     public GameObject player;
-    public GameObject bossHealth;
 
     private void Update()
     {
-        if (bossHealth.GetComponent<BossHealth>().healthValue.value == 0)
-        {
-            showEnd();
-        }
+
     }
 
     public void Resume()
@@ -24,7 +20,7 @@ public class EndMenu : MonoBehaviour
         Time.timeScale = 1f;
     }
 
-    void showEnd()
+    public void showEnd()
     {
         endMenuUI.SetActive(true);
         player.GetComponent<BasicMovement>().enabled = false;

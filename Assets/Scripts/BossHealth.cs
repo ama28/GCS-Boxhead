@@ -14,6 +14,7 @@ public class BossHealth : MonoBehaviour
     public GameObject whiteFade;
     public GameObject MainCamera;
     public GameObject pistol;
+    public GameObject canvas;
 
     private bool alive = true;
 
@@ -25,9 +26,9 @@ public class BossHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        healthBar.fillAmount = (float) healthValue.value / maxHealth;
-        if(alive) Debug.Log("here");
-        if(healthValue.value <= 0 && alive)
+        healthBar.fillAmount = (float)healthValue.value / maxHealth;
+        if (alive) Debug.Log("here");
+        if (healthValue.value <= 0 && alive)
         {
             Debug.Log("DONE");
             StartCoroutine("BossDie");
@@ -35,7 +36,8 @@ public class BossHealth : MonoBehaviour
         }
     }
 
-    IEnumerator BossDie() {
+    IEnumerator BossDie()
+    {
         GameObject gun = GameObject.Find("Gun");
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         player.GetComponent<BasicMovement>().enabled = false;
@@ -46,13 +48,15 @@ public class BossHealth : MonoBehaviour
         AudioManager.PlaySound(AudioManager.Sound.DogDeath, transform.position);
         Vector3 cameraOriginalPos = MainCamera.transform.localPosition;
         //1 seconds of shake
-        for(int i = 0; i < 100; i ++) {
+        for (int i = 0; i < 100; i++)
+        {
             shake(3f, cameraOriginalPos);
             yield return new WaitForSeconds(0.01f);
         }
         whiteFade.GetComponent<FadeIn>().fadeIn(2.1f);
         //3.6 seconds of shake
-        for(int i = 0; i < 240; i ++) {
+        for (int i = 0; i < 240; i++)
+        {
             shake(4f, cameraOriginalPos);
             yield return new WaitForSeconds(0.01f);
         }
@@ -65,11 +69,12 @@ public class BossHealth : MonoBehaviour
 
         //SceneManager.LoadScene("floor_1");
         DataManager.Instance.Initialize();
+        canvas.GetComponent<EndMenu>().showEnd();
     }
 
     void shake(float shakeAmount, Vector3 originalPos)
     {
-        if(shakeAmount > 0)
+        if (shakeAmount > 0)
         {
             float offsetX = Random.value * shakeAmount * 2 - shakeAmount;
             float offsetY = Random.value * shakeAmount * 2 - shakeAmount;
