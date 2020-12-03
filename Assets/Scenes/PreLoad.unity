@@ -825,7 +825,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: -2049797733
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_TargetDisplay: 0
 --- !u!224 &3837052900963382077
 RectTransform:
@@ -1346,6 +1346,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHealth: 100
+  invincible: 0
   InvincibleTime: 1
   Death: {fileID: 11400000, guid: af244f4d369b43d44ae80f303f3d2316, type: 2}
 --- !u!4 &5114065072267627286

@@ -103,6 +103,7 @@ public class FirePistol : MonoBehaviour
     private void OnEnable()
     {
         delayOn = false;
+        Shootvalve = false;
     }
 
     IEnumerator PistolSpark(Vector2 moveInput)

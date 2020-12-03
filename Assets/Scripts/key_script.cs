@@ -36,7 +36,7 @@ public class key_script : MonoBehaviour
 
     private void Update()
     {
-        if (normal_key_count == unlock_count_normal && boss_key_count == 3)
+        if (normal_key_count >= unlock_count_normal && boss_key_count >= 3)
         {
             for (int i = 0; i < stair_doors.Length; i++)
             {
