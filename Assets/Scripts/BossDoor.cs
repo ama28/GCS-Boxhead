@@ -10,24 +10,16 @@ public class BossDoor : MonoBehaviour
     public int count;
     public int total;
 
-    private void Awake()
+    private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         script = player.GetComponent<key_script>();
-        count = script.boss_key_count;
         total = script.unlock_count_boss;
-    }
-
-    private void Update()
-    {
-        count = script.boss_key_count;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log(script.boss_key_count);
-        Debug.Log(script.unlock_count_boss);
-        if (other.gameObject.CompareTag("Player") && script.boss_key_count >= script.unlock_count_boss)
+        if (other.gameObject.CompareTag("Player") && keyScore.bossKeys >= script.unlock_count_boss)
         {
             SceneManager.LoadScene("Boss");
             Destroy(other.gameObject);
