@@ -7,6 +7,13 @@ TagManager:
   - Enemy
   - Bullet
   - Fireball
+  - door
+  - normalkey
+  - boss_door
+  - boss_key
+  - NoClip
+  - floor2trans
+  - UI
   layers:
   - Default
   - TransparentFX
@@ -43,6 +50,9 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Item
+    uniqueID: 4120197565
     locked: 0
   - name: Canvas
     uniqueID: 2245169563

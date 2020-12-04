@@ -11,7 +11,8 @@ public class Reset : MonoBehaviour
     public void OnDeath()
     {
         EndPanel.SetActive(true);
-        Time.timeScale = 0;
+        Time.timeScale = 0; 
+        Cursor.visible = true;
     }
 
     public void RestartGame()
@@ -20,5 +21,8 @@ public class Reset : MonoBehaviour
         DataManager.Instance.Initialize();
         EndPanel.SetActive(false);
         SceneManager.LoadScene(startScene);
+        keyScore.bossKeys = 0;
+        keyScore.stairKeys = 0;
+        Cursor.visible = true;
     }
 }

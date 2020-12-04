@@ -240,7 +240,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1479602768}
   - component: {fileID: 1479602767}
-  - component: {fileID: 1479602766}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -248,14 +247,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1479602766
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1479602765}
-  m_Enabled: 1
 --- !u!20 &1479602767
 Camera:
   m_ObjectHideFlags: 0
@@ -834,7 +825,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: -2049797733
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_TargetDisplay: 0
 --- !u!224 &3837052900963382077
 RectTransform:
@@ -1355,6 +1346,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHealth: 100
+  invincible: 0
   InvincibleTime: 1
   Death: {fileID: 11400000, guid: af244f4d369b43d44ae80f303f3d2316, type: 2}
 --- !u!4 &5114065072267627286

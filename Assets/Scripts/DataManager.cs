@@ -6,19 +6,21 @@ public class DataManager : Singleton<DataManager>
 {
     public int MaxHealth;
     private int CurrentHealth;
+    public bool invincible = false;
 
     public float InvincibleTime;
     private float CurrentTime;
 
     public GameEvent Death;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         Initialize();
     }
 
     public void Initialize()
     {
+        invincible = false;
         CurrentHealth = MaxHealth;
         CurrentTime = 0;
     }
@@ -44,10 +46,17 @@ public class DataManager : Singleton<DataManager>
 
     public void changeHealth(int change)
     {
-        CurrentHealth += change;
+        if(CurrentHealth + change > MaxHealth)
+        {
+            CurrentHealth = MaxHealth;
+        }
+
+        if (!invincible) CurrentHealth += change;
         if(CurrentHealth <= 0)
         {
             Death.Raise();
+        } else if(CurrentHealth < MaxHealth/4) {
+            AudioManager.PlaySound(AudioManager.Sound.LowHealth, transform.position);
         }
     }
 
