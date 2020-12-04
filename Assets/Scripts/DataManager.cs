@@ -51,7 +51,15 @@ public class DataManager : Singleton<DataManager>
             CurrentHealth = MaxHealth;
         }
 
-        if (!invincible) CurrentHealth += change;
+        if (change > 0)
+        {
+            CurrentHealth += change;
+        }
+        else
+        {
+            if (!invincible) CurrentHealth += change;
+        }
+
         if(CurrentHealth <= 0)
         {
             Death.Raise();

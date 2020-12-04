@@ -10,7 +10,7 @@ public class HealthPickup : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             particles.GetComponent<ParticleSystem>().Play();
-            DataManager.Instance.changeHealth(3);
+            DataManager.Instance.changeHealth(50);
             AudioManager.PlaySound(AudioManager.Sound.HealthPickup, transform.position);
             Destroy(gameObject, particles.GetComponent<ParticleSystem>().startLifetime);
         }
