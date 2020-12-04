@@ -20,8 +20,8 @@ public class FirePistol : MonoBehaviour
 
     public Vector2 playerDir;
 
-    public bool RapidOn;
-    public bool Shootvalve;
+    float interval;
+    BasicMovement playerMovement;
 
     // Update is called once per frame
     void Update()
@@ -31,11 +31,9 @@ public class FirePistol : MonoBehaviour
 
         animator.SetBool("Shot", Shooter);
 
-        
-
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Vector2 playerDir = player.GetComponent<BasicMovement>().facingDir;
+            Vector2 playerDir = playerMovement.facingDir;
 
             
 
@@ -48,12 +46,6 @@ public class FirePistol : MonoBehaviour
                     //this.Shoot(playerDir);
                     StartCoroutine(PistolSpark(playerDir));
                 }
-            }
-
-            if (gunNum == 2)
-            {
-
-                RapidOn = true;
             }
 
             if (gunNum == 3)
@@ -79,31 +71,27 @@ public class FirePistol : MonoBehaviour
             }
         }
 
-        
-
-        if (Input.GetKeyUp(KeyCode.Space))
+        if (gunNum == 2)
         {
-
-            RapidOn = false;
-
-        }
-
-
-        if (Shootvalve == false)
-        {
-            if (RapidOn == true)
+            if (Input.GetKey(KeyCode.Space))
             {
-                Vector2 playerDir = player.GetComponent<BasicMovement>().facingDir;
-                StartCoroutine(MachineSpark(playerDir));
-            }
+                Vector2 playerDir = playerMovement.facingDir;
 
+                interval += Time.deltaTime;
+                if (interval > 0.05f)
+                {
+                    MachineSpark(playerDir);
+                    interval = 0;
+                }
+            }
         }
     }
 
     private void OnEnable()
     {
         delayOn = false;
-        Shootvalve = false;
+        interval = 0;
+        playerMovement = player.GetComponent<BasicMovement>();
     }
 
     IEnumerator PistolSpark(Vector2 moveInput)
@@ -122,20 +110,11 @@ public class FirePistol : MonoBehaviour
 
     }
 
-    IEnumerator MachineSpark(Vector2 moveInput)
+    void MachineSpark(Vector2 moveInput)
     {
-        Shootvalve = true;
         Transform bulletTransform = Instantiate(pfBullet, transform.position, Quaternion.identity);
         bulletTransform.GetComponent<Bullet>().setup(moveInput);
         AudioManager.PlaySound(AudioManager.Sound.Uzi, transform.position);
-
-        
-        yield return new WaitForSeconds(0.05f);
-        Shootvalve = false;
-        
-        
-
-
     }
 
     IEnumerator ShotSpark(Vector2 shot1, Vector2 shot2, Vector2 shot3)

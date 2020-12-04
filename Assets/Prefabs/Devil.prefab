@@ -4406,10 +4406,10 @@ GameObject:
   - component: {fileID: 8863703922390463100}
   - component: {fileID: 8863703922390463091}
   - component: {fileID: 8863703922390463088}
-  - component: {fileID: 7308012012649923139}
   - component: {fileID: 763985583629544761}
   - component: {fileID: 7563270067068604476}
   - component: {fileID: 824940245}
+  - component: {fileID: 1179918879588723377}
   m_Layer: 11
   m_Name: Devil
   m_TagString: Enemy
@@ -4511,32 +4511,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &7308012012649923139
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8863703922390463094}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.47, y: 0.99}
-    newSize: {x: 4.690705, y: 9.639999}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.4, y: 0.9}
-  m_EdgeRadius: 0
 --- !u!114 &763985583629544761
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4569,7 +4543,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 20
-  playerHurtNoise: {fileID: 8300000, guid: 686c3c3c07f334778846bd5a6b95c1d3, type: 3}
+  IsTrig: 0
 --- !u!95 &824940245
 Animator:
   serializedVersion: 3
@@ -4589,3 +4563,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!70 &1179918879588723377
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8863703922390463094}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.015953504, y: 0.030577688}
+  m_Size: {x: 0.3955489, y: 0.8278048}
+  m_Direction: 0
