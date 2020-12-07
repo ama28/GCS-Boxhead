@@ -25275,8 +25275,6 @@ MonoBehaviour:
   delayOn: 0
   gunNum: 0
   playerDir: {x: 0, y: 0}
-  RapidOn: 0
-  Shootvalve: 0
 --- !u!1 &1379054389577275678
 GameObject:
   m_ObjectHideFlags: 0
@@ -25958,8 +25956,6 @@ MonoBehaviour:
   delayOn: 0
   gunNum: 0
   playerDir: {x: 0, y: 0}
-  RapidOn: 0
-  Shootvalve: 0
 --- !u!1 &1379054389823731552
 GameObject:
   m_ObjectHideFlags: 0
@@ -26229,8 +26225,6 @@ MonoBehaviour:
   delayOn: 0
   gunNum: 0
   playerDir: {x: 0, y: 0}
-  RapidOn: 0
-  Shootvalve: 0
 --- !u!1 &1379054389903527093
 GameObject:
   m_ObjectHideFlags: 0
@@ -26392,8 +26386,6 @@ MonoBehaviour:
   delayOn: 0
   gunNum: 0
   playerDir: {x: 0, y: 0}
-  RapidOn: 0
-  Shootvalve: 0
 --- !u!1 &1379054389984254960
 GameObject:
   m_ObjectHideFlags: 0
@@ -26581,8 +26573,6 @@ MonoBehaviour:
   delayOn: 0
   gunNum: 0
   playerDir: {x: 0, y: 0}
-  RapidOn: 0
-  Shootvalve: 0
 --- !u!1 &1379054390040193750
 GameObject:
   m_ObjectHideFlags: 0
@@ -27264,8 +27254,6 @@ MonoBehaviour:
   delayOn: 0
   gunNum: 0
   playerDir: {x: 0, y: 0}
-  RapidOn: 0
-  Shootvalve: 0
 --- !u!1 &1379054390390177168
 GameObject:
   m_ObjectHideFlags: 0
@@ -27453,8 +27441,6 @@ MonoBehaviour:
   delayOn: 0
   gunNum: 0
   playerDir: {x: 0, y: 0}
-  RapidOn: 0
-  Shootvalve: 0
 --- !u!1 &1379054390517387688
 GameObject:
   m_ObjectHideFlags: 0
@@ -28133,8 +28119,6 @@ MonoBehaviour:
   delayOn: 0
   gunNum: 0
   playerDir: {x: 0, y: 0}
-  RapidOn: 0
-  Shootvalve: 0
 --- !u!1 &1379054390853421472
 GameObject:
   m_ObjectHideFlags: 0
@@ -43290,13 +43274,12 @@ GameObject:
   - component: {fileID: 3994953590712955793}
   - component: {fileID: 9036537255258818956}
   - component: {fileID: 9036537255258818959}
-  - component: {fileID: 4496903237705225988}
   - component: {fileID: 9036537255258818993}
   - component: {fileID: 9036537255258818994}
   - component: {fileID: 1915176188}
   - component: {fileID: -4502803306723966376}
-  - component: {fileID: 8098907382497175550}
   - component: {fileID: 6247212749631737555}
+  - component: {fileID: 1326227990}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -43430,18 +43413,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &4496903237705225988
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9036537255258818955}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd39551e30ff047dca9d3027462ce147, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &9036537255258818993
 Animator:
   serializedVersion: 3
@@ -43509,19 +43480,6 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9036537255258818955}
   m_Enabled: 1
---- !u!114 &8098907382497175550
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9036537255258818955}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a19d5aa240ae440d904ed57cd2eeaee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  doorID: 0
 --- !u!114 &6247212749631737555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43534,11 +43492,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2e11f1824b9c499e9056789b038c506, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unlock_count_normal: 0
-  unlock_count_boss: 0
+  unlock_count_normal: 5
+  unlock_count_boss: 5
   normal_key_count: 0
   boss_key_count: 0
   stair_doors: []
+--- !u!114 &1326227990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9036537255258818955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd36cf672b5f9094abd4888d1441e3fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9036537255904991767
 GameObject:
   m_ObjectHideFlags: 0
@@ -43872,7 +43842,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: -2049797733
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!114 &9036537256951643911
