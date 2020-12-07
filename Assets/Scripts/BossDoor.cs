@@ -22,7 +22,6 @@ public class BossDoor : MonoBehaviour
         if (other.gameObject.CompareTag("Player") && keyScore.bossKeys >= script.unlock_count_boss)
         {
             SceneManager.LoadScene("Boss");
-            Destroy(other.gameObject);
             Destroy(GameObject.FindGameObjectWithTag("UI"));
         }
     }
