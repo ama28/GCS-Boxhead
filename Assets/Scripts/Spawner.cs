@@ -9,6 +9,8 @@ public class Spawner : MonoBehaviour
 
     public float period;
     public float devilRate;
+    public int maxEnemies;
+    public int enemiesSpawned = 0;
 
     [SerializeField] private Transform zombie;
     [SerializeField] private Transform devil;
@@ -24,17 +26,24 @@ public class Spawner : MonoBehaviour
     void Update()
     {
         this.timer += Time.deltaTime;
-        if (this.timer >= period)
+        if (this.timer >= period && enemiesSpawned < maxEnemies)
         {
+            GameObject spawned;
             if (Random.Range(0f, 1.0f) < devilRate)
             {
-                Instantiate(devil, transform.position, Quaternion.identity);
+                spawned = Instantiate(devil, transform.position, Quaternion.identity).gameObject;
+                Devil script = spawned.GetComponent<Devil>();
+                script.setSpawn(this);
             }
             else
             {
-                Instantiate(zombie, transform.position, Quaternion.identity);
+                spawned = Instantiate(zombie, transform.position, Quaternion.identity).gameObject;
+                Zombie script = spawned.GetComponent<Zombie>();
+                script.setSpawn(this);
             }
             this.timer = 0;
+            enemiesSpawned++;
+            
         }
     }
 }

@@ -22,12 +22,12 @@ public class key_script : MonoBehaviour
         if (collision.gameObject.tag == "normalkey")
         {
             keyScore.stairKeys += 1;
+            AudioManager.PlaySound(AudioManager.Sound.Key, transform.position);
             Destroy(collision.gameObject);
-        }
-
-        if (collision.gameObject.tag == "boss_key")
+        } else if (collision.gameObject.tag == "boss_key")
         {
             keyScore.bossKeys += 1;
+            AudioManager.PlaySound(AudioManager.Sound.Key, transform.position);
             Destroy(collision.gameObject);
         }
     }

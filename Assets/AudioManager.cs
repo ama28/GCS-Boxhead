@@ -15,7 +15,8 @@ public static class AudioManager
         DogRoar,
         LowHealth,
         HealthPickup,
-        ZombieDeath
+        ZombieDeath,
+        Key
     }
 
     private static Dictionary<Sound, float> soundTimerDictionary;
@@ -52,7 +53,7 @@ public static class AudioManager
         AudioClip clip = soundEffect.clips[Random.Range(0, soundEffect.clips.Length-1)];
         audioSource.volume = soundEffect.volume;
         if(soundEffect.spatial) {
-            audioSource.spatialBlend = 0.6f;
+            audioSource.spatialBlend = 1f;
             audioSource.spread = 174f;
         } else {
             audioSource.spatialBlend = 0;
