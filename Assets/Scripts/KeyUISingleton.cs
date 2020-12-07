@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KeyUICrossSceneManager : MonoBehaviour
+public class KeyUISingleton : MonoBehaviour
 {
     public static GameObject KeyUIInstance;
 

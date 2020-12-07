@@ -27,7 +27,6 @@ public class BossHealth : MonoBehaviour
     void Update()
     {
         healthBar.fillAmount = (float)healthValue.value / maxHealth;
-        if (alive) Debug.Log("here");
         if (healthValue.value <= 0 && alive)
         {
             Debug.Log("DONE");
