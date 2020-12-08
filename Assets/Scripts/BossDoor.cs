@@ -19,7 +19,7 @@ public class BossDoor : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Player") && keyScore.bossKeys >= script.unlock_count_boss)
+        if (other.gameObject.CompareTag("Player") && keyScore.bossKeys == script.unlock_count_boss)
         {
             SceneManager.LoadScene("Boss");
             Destroy(other.gameObject);

@@ -14,10 +14,10 @@ public class OpenDoor : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (keyScore.stairKeys >= k.unlock_count_normal && keyScore.bossKeys >= 3)
+        if (keyScore.stairKeys == k.unlock_count_normal)
         {
 
-             Destroy(gameObject);
+            Destroy(gameObject);
         }
     }
 }

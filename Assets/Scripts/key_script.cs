@@ -24,7 +24,8 @@ public class key_script : MonoBehaviour
             keyScore.stairKeys += 1;
             AudioManager.PlaySound(AudioManager.Sound.Key, transform.position);
             Destroy(collision.gameObject);
-        } else if (collision.gameObject.tag == "boss_key")
+        }
+        else if (collision.gameObject.tag == "boss_key")
         {
             keyScore.bossKeys += 1;
             AudioManager.PlaySound(AudioManager.Sound.Key, transform.position);
