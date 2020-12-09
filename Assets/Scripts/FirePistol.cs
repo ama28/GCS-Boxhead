@@ -35,12 +35,13 @@ public class FirePistol : MonoBehaviour
 
     private SpriteRenderer GunSprites;
 
+   
     // Update is called once per frame
     private void Awake()
     {
         GunSprites = this.GetComponent<SpriteRenderer>();
-        
 
+   
     }
 
     void Update()
@@ -55,18 +56,21 @@ public class FirePistol : MonoBehaviour
         {
             //Turning on and off the visuals for the guns
             GunSprites.sprite = Pistol;
+            BlowBackEffectPistol.transform.position = this.transform.position;
         }
 
         if (gunNum == 2)
         {
             //Turning on and off the visuals for the guns
             GunSprites.sprite = Minigun;
+            BlowBackEffectPistol.transform.position = MiniGunPos.position;
         }
 
         if (gunNum == 3)
         {
             //Turning on and off the visuals for the guns
             GunSprites.sprite = Shotgun;
+            BlowBackEffectPistol.transform.position = ShotGunPos.position;
         }
 
 
@@ -117,11 +121,14 @@ public class FirePistol : MonoBehaviour
         {
                 if (Input.GetKey(KeyCode.Space))
             {
+                Shooter = true;
                 Vector2 playerDir = playerMovement.facingDir;
 
                 interval += Time.deltaTime;
                 if (interval > 0.05f)
                 {
+                    Shooter = true;
+                    BlowBackEffectPistol.SetActive(true);
                     MachineSpark(playerDir);
                     interval = 0;
                 }
@@ -142,7 +149,7 @@ public class FirePistol : MonoBehaviour
         Transform bulletTransform = Instantiate(pfBullet, transform.position, Quaternion.identity);
         bulletTransform.GetComponent<Bullet>().setup(moveInput);
         AudioManager.PlaySound(AudioManager.Sound.Pistol, transform.position);
-
+        BlowBackEffectPistol.transform.position = this.transform.position;
         BlowBackEffectPistol.SetActive(true);
         yield return new WaitForSeconds(0.1f);
         delayOn = false;
@@ -154,14 +161,20 @@ public class FirePistol : MonoBehaviour
 
     void MachineSpark(Vector2 moveInput)
     {
+
+        
         Transform bulletTransform = Instantiate(pfBullet, MiniGunPos.position, Quaternion.identity);
         bulletTransform.GetComponent<Bullet>().setup(moveInput);
         AudioManager.PlaySound(AudioManager.Sound.Uzi, transform.position);
+        BlowBackEffectPistol.SetActive(false);
+        Shooter = false;
     }
 
     IEnumerator ShotSpark(Vector2 shot1, Vector2 shot2, Vector2 shot3)
     {
-        
+
+        Shooter = true;
+        BlowBackEffectPistol.SetActive(true);
         Transform bulletTransform1 = Instantiate(pfBullet, ShotGunPos.position, Quaternion.identity);
         bulletTransform1.GetComponent<Bullet>().setup(shot1);
 
@@ -175,8 +188,8 @@ public class FirePistol : MonoBehaviour
 
 
         yield return new WaitForSeconds(0.1f);
-        
-
+        BlowBackEffectPistol.SetActive(false);
+        Shooter = false;
 
 
 
