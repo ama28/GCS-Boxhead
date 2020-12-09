@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class KeyManager : MonoBehaviour
 {
+    public GameObject player;
 
-    // Start is called before the first frame update
     private void Awake()
     {
-        if (keyScore.f1keysCollected == false)
+        player = GameObject.FindGameObjectWithTag("Player");
+        if (!player.GetComponent<PlayerCrossSceneManager>().f1keysCollected)
         {
-            DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(this);
         }
-        else { Destroy(gameObject); }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 }

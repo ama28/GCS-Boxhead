@@ -7,13 +7,19 @@ public class FirePistol : MonoBehaviour
     [SerializeField] private Transform pfBullet;
     [SerializeField] private GameObject player;
 
-    public GameObject BlowBackEffect;
+    [SerializeField] private Sprite Pistol;
+    [SerializeField] private Sprite Minigun;
+    [SerializeField] private Sprite Shotgun;
 
+
+    public GameObject BlowBackEffectPistol;
+  
     public Animator animator;
 
     public bool Shooter;
 
     public bool delayOn;
+
 
 
     public int gunNum;
@@ -23,13 +29,46 @@ public class FirePistol : MonoBehaviour
     float interval;
     BasicMovement playerMovement;
 
+    public Transform MiniGunPos;
+
+    public Transform ShotGunPos;
+
+    private SpriteRenderer GunSprites;
+
     // Update is called once per frame
+    private void Awake()
+    {
+        GunSprites = this.GetComponent<SpriteRenderer>();
+        
+
+    }
+
     void Update()
     {
 
       gunNum =  player.GetComponent<BasicMovement>().MainGunNum;
 
         animator.SetBool("Shot", Shooter);
+
+
+        if (gunNum == 1)
+        {
+            //Turning on and off the visuals for the guns
+            GunSprites.sprite = Pistol;
+        }
+
+        if (gunNum == 2)
+        {
+            //Turning on and off the visuals for the guns
+            GunSprites.sprite = Minigun;
+        }
+
+        if (gunNum == 3)
+        {
+            //Turning on and off the visuals for the guns
+            GunSprites.sprite = Shotgun;
+        }
+
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -39,6 +78,7 @@ public class FirePistol : MonoBehaviour
 
             if (gunNum == 1)
             {
+               
                 if (delayOn == false)
                 {
                     delayOn = true;
@@ -48,9 +88,11 @@ public class FirePistol : MonoBehaviour
                 }
             }
 
+
+
             if (gunNum == 3)
             {
-
+               
                 float arcX;
                 float arcY;
 
@@ -73,7 +115,7 @@ public class FirePistol : MonoBehaviour
 
         if (gunNum == 2)
         {
-            if (Input.GetKey(KeyCode.Space))
+                if (Input.GetKey(KeyCode.Space))
             {
                 Vector2 playerDir = playerMovement.facingDir;
 
@@ -101,10 +143,10 @@ public class FirePistol : MonoBehaviour
         bulletTransform.GetComponent<Bullet>().setup(moveInput);
         AudioManager.PlaySound(AudioManager.Sound.Pistol, transform.position);
 
-        BlowBackEffect.SetActive(true);
+        BlowBackEffectPistol.SetActive(true);
         yield return new WaitForSeconds(0.1f);
         delayOn = false;
-        BlowBackEffect.SetActive(false);
+        BlowBackEffectPistol.SetActive(false);
         Shooter = false;
 
 
@@ -112,7 +154,7 @@ public class FirePistol : MonoBehaviour
 
     void MachineSpark(Vector2 moveInput)
     {
-        Transform bulletTransform = Instantiate(pfBullet, transform.position, Quaternion.identity);
+        Transform bulletTransform = Instantiate(pfBullet, MiniGunPos.position, Quaternion.identity);
         bulletTransform.GetComponent<Bullet>().setup(moveInput);
         AudioManager.PlaySound(AudioManager.Sound.Uzi, transform.position);
     }
@@ -120,13 +162,13 @@ public class FirePistol : MonoBehaviour
     IEnumerator ShotSpark(Vector2 shot1, Vector2 shot2, Vector2 shot3)
     {
         
-        Transform bulletTransform1 = Instantiate(pfBullet, transform.position, Quaternion.identity);
+        Transform bulletTransform1 = Instantiate(pfBullet, ShotGunPos.position, Quaternion.identity);
         bulletTransform1.GetComponent<Bullet>().setup(shot1);
 
-        Transform bulletTransform2 = Instantiate(pfBullet, transform.position, Quaternion.identity);
+        Transform bulletTransform2 = Instantiate(pfBullet, ShotGunPos.position, Quaternion.identity);
         bulletTransform2.GetComponent<Bullet>().setup(shot2);
 
-        Transform bulletTransform3 = Instantiate(pfBullet, transform.position, Quaternion.identity);
+        Transform bulletTransform3 = Instantiate(pfBullet, ShotGunPos.position, Quaternion.identity);
         bulletTransform3.GetComponent<Bullet>().setup(shot3);
         AudioManager.PlaySound(AudioManager.Sound.Pistol, transform.position);
         
