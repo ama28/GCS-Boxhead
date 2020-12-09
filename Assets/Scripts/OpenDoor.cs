@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class OpenDoor : MonoBehaviour
 {
-    key_script k;
+    KeyScript k;
     // Start is called before the first frame update
     void Start()
     {
-        k = GameObject.FindWithTag("Player").GetComponent<key_script>();
+        k = GameObject.FindWithTag("Player").GetComponent<KeyScript>();
     }
 
     // Update is called once per frame
     private void Update()
     {
-        if (keyScore.stairKeys == k.unlock_count_normal)
+        if (KeyScore.stairKeys == k.unlock_count_normal)
         {
 
             Destroy(gameObject);
