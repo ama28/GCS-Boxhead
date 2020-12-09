@@ -6,10 +6,9 @@ using UnityEngine.UI;
 
 public class KeyImage : MonoBehaviour
 {
-    public Sprite normalKey;
-    public Sprite bossKey;
+    public GameObject normalKeyDisplay;
+    public GameObject bossKeyDisplay;
 
-    public Image keySprite;
 
     string sceneName;
     void Awake()
@@ -23,15 +22,18 @@ public class KeyImage : MonoBehaviour
 
         if (sceneName == "floor_1")
         {
-            keySprite.sprite = normalKey;
+            normalKeyDisplay.SetActive(true);
+            bossKeyDisplay.SetActive(false);
         }
         else if (sceneName == "floor_2")
         {
-            keySprite.sprite = bossKey;
+            normalKeyDisplay.SetActive(false);
+            bossKeyDisplay.SetActive(true);
         }
         else
         {
-            keySprite.enabled = false;
+            normalKeyDisplay.SetActive(false);
+            bossKeyDisplay.SetActive(false);
         }
     }
 }
