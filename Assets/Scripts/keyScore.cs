@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class keyScore : MonoBehaviour
+public class KeyScore : MonoBehaviour
 {
     public static int bossKeys = 0;
     public static int stairKeys = 0;
