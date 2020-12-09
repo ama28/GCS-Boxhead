@@ -4,20 +4,29 @@ using UnityEngine;
 
 public class PlayerCrossSceneManager : MonoBehaviour
 {
-    public static GameObject PlayerInstance;
-
+    public static PlayerCrossSceneManager instance;
+    public bool f1keysCollected = false;
 
     // Start is called before the first frame update
-    void Awake()
+    private void Awake()
     {
-        if (PlayerInstance == null)
+        DontDestroyOnLoad(this);
+
+        if (instance != null && instance != this)
         {
-            PlayerInstance = gameObject;
-            DontDestroyOnLoad(gameObject);
+            Destroy(gameObject);
         }
         else
         {
-            Destroy(gameObject);
+            instance = this;
+        }
+    }
+
+    private void Update()
+    {
+        if (gameObject.GetComponent<key_script>().unlock_count_normal == 5)
+        {
+            f1keysCollected = true;
         }
     }
 }

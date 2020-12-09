@@ -20,7 +20,7 @@ public class keyScore : MonoBehaviour
     {
         if (isBossKey)
         {
-            score.text = bossKeys + "/5";
+            score.text = bossKeys + "/4";
         }
         else
         {
