@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class key_script : MonoBehaviour
+public class KeyScript : MonoBehaviour
 {
     public int unlock_count_normal;
     public int unlock_count_boss;
@@ -21,12 +21,13 @@ public class key_script : MonoBehaviour
     {
         if (collision.gameObject.tag == "normalkey")
         {
-            keyScore.stairKeys += 1;
+            KeyScore.stairKeys += 1;
             AudioManager.PlaySound(AudioManager.Sound.Key, transform.position);
             Destroy(collision.gameObject);
-        } else if (collision.gameObject.tag == "boss_key")
+        }
+        else if (collision.gameObject.tag == "boss_key")
         {
-            keyScore.bossKeys += 1;
+            KeyScore.bossKeys += 1;
             AudioManager.PlaySound(AudioManager.Sound.Key, transform.position);
             Destroy(collision.gameObject);
         }

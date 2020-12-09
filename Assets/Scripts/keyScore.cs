@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class keyScore : MonoBehaviour
+public class KeyScore : MonoBehaviour
 {
     public static int bossKeys = 0;
     public static int stairKeys = 0;
     public bool isBossKey;
     public Text score;
-
+    public static bool f1keysCollected;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,11 +20,16 @@ public class keyScore : MonoBehaviour
     {
         if (isBossKey)
         {
-            score.text = bossKeys + "/5";
+            score.text = bossKeys + "/4";
         }
         else
         {
             score.text = stairKeys + "/5";
+        }
+
+        if(stairKeys >= 5)
+        {
+            f1keysCollected = true;
         }
     }
 }

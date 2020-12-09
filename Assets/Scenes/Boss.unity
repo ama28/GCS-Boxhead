@@ -773,7 +773,7 @@ MonoBehaviour:
   health: {fileID: 11400000, guid: 0cb00d622c8d8c74a85ed01d37c1b151, type: 2}
   Neckspeed: 5
   shootPeriod: 0.7
-  fireball: {fileID: 6711168111432735628, guid: 00691870d9163493d88e51b308281370,
+  fireball: {fileID: 4048310049141589432, guid: 52d68e382d3b81141ab1abebfb7da877,
     type: 3}
   fireballPosition: {fileID: 1554551568}
   newDirection: {x: 0, y: 0, z: 0}
@@ -962,7 +962,8 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: -2049797733
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8394559654328221770, guid: 80620f3490aa7fe42901099d9d0d6d72, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 80620f3490aa7fe42901099d9d0d6d72, type: 3}
 --- !u!1001 &140870175
 PrefabInstance:
@@ -2114,7 +2115,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &614996037
 MonoBehaviour:
   m_ObjectHideFlags: 0

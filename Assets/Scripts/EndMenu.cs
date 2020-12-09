@@ -11,6 +11,7 @@ public class EndMenu : MonoBehaviour
     public void Resume()
     {
         endMenuUI.SetActive(false);
+        Cursor.visible = false;
         player.GetComponent<BasicMovement>().enabled = true;
         Time.timeScale = 1f;
     }
@@ -18,13 +19,22 @@ public class EndMenu : MonoBehaviour
     public void showEnd()
     {
         endMenuUI.SetActive(true);
+        Cursor.visible = true;
         player.GetComponent<BasicMovement>().enabled = false;
         Time.timeScale = 0f;
     }
 
     public void ToMainMenu()
     {
-        Resume();
+        InitializeData();
         SceneManager.LoadScene("MainMenu");
+    }
+
+    void InitializeData()
+    {
+        Time.timeScale = 1f;
+        Cursor.visible = true;
+        KeyScore.bossKeys = 0;
+        KeyScore.stairKeys = 0;
     }
 }
