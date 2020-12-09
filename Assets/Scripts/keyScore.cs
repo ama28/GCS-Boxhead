@@ -9,7 +9,7 @@ public class keyScore : MonoBehaviour
     public static int stairKeys = 0;
     public bool isBossKey;
     public Text score;
-
+    public static bool f1keysCollected;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +25,11 @@ public class keyScore : MonoBehaviour
         else
         {
             score.text = stairKeys + "/5";
+        }
+
+        if(stairKeys >= 5)
+        {
+            f1keysCollected = true;
         }
     }
 }
