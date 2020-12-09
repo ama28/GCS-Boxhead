@@ -5897,7 +5897,7 @@ GameObject:
   - component: {fileID: 520154384}
   - component: {fileID: 520154387}
   m_Layer: 5
-  m_Name: StairUIBorder
+  m_Name: KeyUIBorder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26697,6 +26697,7 @@ GameObject:
   - component: {fileID: 3491884673486980752}
   - component: {fileID: 3491884673486980755}
   - component: {fileID: 226567865}
+  - component: {fileID: 3491884673486980753}
   m_Layer: 5
   m_Name: UICanvas
   m_TagString: UI
@@ -26731,6 +26732,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8d110c877e17247ff93522deb7180ef7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InstructionText: {fileID: 0}
+--- !u!114 &3491884673486980753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3491884673486980750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1e5384b4c131674d9079f05ae7bf46f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!224 &3491884673486980754
@@ -27008,8 +27022,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cb8008fb0db44faa8bed8444cc2c7d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBossKey: 0
   score: {fileID: 3491884674644128754}
+  sceneName: 
 --- !u!1 &3491884674644128751
 GameObject:
   m_ObjectHideFlags: 0
@@ -27023,7 +27037,7 @@ GameObject:
   - component: {fileID: 3491884674644128754}
   - component: {fileID: 3491884674644128749}
   m_Layer: 5
-  m_Name: stairScore
+  m_Name: KeyScore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27129,13 +27143,29 @@ GameObject:
   - component: {fileID: 3491884674694233688}
   - component: {fileID: 3491884674694233694}
   - component: {fileID: 3491884674694233689}
+  - component: {fileID: 3491884674694233692}
   m_Layer: 5
-  m_Name: stairKey
+  m_Name: KeyImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &3491884674694233692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3491884674694233691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00a7f71c8a221684e8bccfc2eb4563b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  normalKey: {fileID: 21300000, guid: 783cfb3437eefdf4d99d5e6e6bec37fe, type: 3}
+  bossKey: {fileID: 21300000, guid: 37cbf3e48c0c6f849b940a156134677f, type: 3}
+  keySprite: {fileID: 3491884674694233689}
 --- !u!222 &3491884674694233694
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -27491,7 +27521,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4207744211753568161}
   - component: {fileID: 4207744211753568223}
-  - component: {fileID: 4207744211753568222}
   m_Layer: 0
   m_Name: MinimapCamera
   m_TagString: Untagged
@@ -27513,14 +27542,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!81 &4207744211753568222
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4207744211753568160}
-  m_Enabled: 1
 --- !u!20 &4207744211753568223
 Camera:
   m_ObjectHideFlags: 0
