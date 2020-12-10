@@ -14,19 +14,23 @@ public class Spawner : MonoBehaviour
 
     [SerializeField] private Transform zombie;
     [SerializeField] private Transform devil;
+    private Transform target;
     private float timer;
+    private float distanceToPlayer;
 
     // Start is called before the first frame update
     void Start()
     {
         this.timer = 0;
+        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        distanceToPlayer = Vector2.Distance(transform.position, target.position);
         this.timer += Time.deltaTime;
-        if (this.timer >= period && enemiesSpawned < maxEnemies)
+        if (this.timer >= period && enemiesSpawned < maxEnemies && distanceToPlayer > 14)
         {
             GameObject spawned;
             if (Random.Range(0f, 1.0f) < devilRate)

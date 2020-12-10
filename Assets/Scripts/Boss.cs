@@ -75,6 +75,7 @@ public class Boss : MonoBehaviour
     }
 
     IEnumerator FireballBursts() {
+        yield return new WaitForSeconds(0.3f);
         Vector2 dir;
         for(int i = 0; i < 4; i++) {
             dir = (target.position - transform.position).normalized;
@@ -90,6 +91,7 @@ public class Boss : MonoBehaviour
     }
 
     IEnumerator FireballAngles() {
+        yield return new WaitForSeconds(0.3f);
         Vector2 dir;
         for(int i = 0; i < 6; i++) {
             dir = (target.position - transform.position).normalized;
@@ -103,6 +105,7 @@ public class Boss : MonoBehaviour
     }
 
     IEnumerator SpawnZombies() {
+        yield return new WaitForSeconds(0.3f);
         Vector3 spawnPos = transform.position - (new Vector3(0, 5f, 0));
         zombies[0] = Instantiate(zombie, spawnPos, Quaternion.identity).gameObject.GetComponent<Zombie>();
         zombies[1] = Instantiate(zombie, spawnPos - (new Vector3(2f, 0, 0)), Quaternion.identity).gameObject.GetComponent<Zombie>();

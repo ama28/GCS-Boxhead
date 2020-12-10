@@ -3170,12 +3170,11 @@ MonoBehaviour:
   healthValue: {fileID: 11400000, guid: 0cb00d622c8d8c74a85ed01d37c1b151, type: 2}
   maxHealth: 60
   healthBar: {fileID: 842731268}
-  bossImage: {fileID: 1799829391}
   boss: {fileID: 105878265}
-  whiteFade: {fileID: 339586135}
   MainCamera: {fileID: 930820352}
   pistol: {fileID: 0}
   canvas: {fileID: 354136141}
+  cutscene: {fileID: 1406775895}
 --- !u!1 &930820352 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9036537256330536748, guid: 80620f3490aa7fe42901099d9d0d6d72,
@@ -4656,6 +4655,9 @@ MonoBehaviour:
   player: {fileID: 1842043241}
   boss: {fileID: 105878265}
   bossUI: {fileID: 12613649}
+  canvas: {fileID: 354136141}
+  whiteFade: {fileID: 339586135}
+  bossImage: {fileID: 1799829391}
 --- !u!61 &1406775896
 BoxCollider2D:
   m_ObjectHideFlags: 0

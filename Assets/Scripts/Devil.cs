@@ -35,12 +35,15 @@ public class Devil : MonoBehaviour
     {
         this.timer += Time.deltaTime;
         distanceToPlayer = Vector2.Distance(transform.position, target.position);
-        if (distanceToPlayer > 0)
+        if (distanceToPlayer > 5)
         {
+            animator.speed = 1;
             transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+        } else {
+            animator.speed = 0;
         }
         Vector2 dir = (target.position - transform.position).normalized;
-        if (this.timer >= this.shootPeriod && distanceToPlayer <= 10)
+        if (this.timer >= this.shootPeriod && distanceToPlayer <= 9)
         {
             Shoot(dir);
             this.timer = 0;

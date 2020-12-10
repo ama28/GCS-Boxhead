@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BossCutscene : MonoBehaviour
 {
@@ -12,6 +13,13 @@ public class BossCutscene : MonoBehaviour
     private int cameraZoomOut = 7;
     private bool triggered = false;
     private FirePistol[] pistols;
+    public GameObject canvas;
+
+    public GameObject whiteFade;
+
+    public Image bossImage;
+    private bool done = false;
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(!triggered && collision.gameObject.tag == "Player") {
@@ -21,8 +29,15 @@ public class BossCutscene : MonoBehaviour
         }
     }
 
+    private void Start() {
+        GameObject whiteFadeParent = whiteFade.transform.parent.gameObject;
+        whiteFadeParent.SetActive(true);
+        whiteFadeParent.GetComponent<Canvas>().sortingOrder = 2;
+        whiteFade.GetComponent<Image>().canvasRenderer.SetAlpha(0f);
+    }
+
     private void Update() {
-        if(triggered) {
+        if(triggered && !done) {
             for(int i = 0; i < pistols.Length; i++) {
                 pistols[i].setCameraPos(new Vector3(0, 17, -10));
             }
@@ -30,6 +45,8 @@ public class BossCutscene : MonoBehaviour
     }
 
     private IEnumerator Cutscene() {
+
+        Destroy(GetComponent<BoxCollider2D>());
         player.GetComponent<BasicMovement>().enabled = false;
         for(int i = 0; i < pistols.Length; i++) {
             pistols[i].enabled = false;
@@ -67,11 +84,11 @@ public class BossCutscene : MonoBehaviour
             yield return null;
         }
         cam.orthographicSize = 5;
-        MainCamera.transform.localPosition = new Vector3(0, 17, -10);
+        MainCamera.transform.localPosition = new Vector3(0, 18, -10);
         for(int i = 0; i < pistols.Length; i++) {
-            pistols[i].setCameraPos(new Vector3(0, 17, -10));
+            pistols[i].setCameraPos(new Vector3(0, 18, -10));
         }
-        Destroy(gameObject);
+        done = true;
     }
 
     private IEnumerator ZoomOut() {
@@ -82,6 +99,48 @@ public class BossCutscene : MonoBehaviour
             MainCamera.transform.localPosition = Vector3.Lerp(MainCamera.transform.localPosition, EndPosition, Time.deltaTime);
             yield return null;
         }
+    }
+
+    IEnumerator BossDie()
+    {
+        boss.GetComponent<Boss>().Die();
+        for(int i = 0; i < pistols.Length; i++) {
+            pistols[i].enabled = false;
+        }
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        player.GetComponent<BasicMovement>().enabled = false;
+        DataManager.Instance.invincible = true;
+        bossImage.enabled = false;
+        AudioManager.PlaySound(AudioManager.Sound.DogDeath, transform.position);
+        Vector3 cameraOriginalPos = MainCamera.transform.localPosition;
+        //1 seconds of shake
+        for (int i = 0; i < 100; i++)
+        {
+            shake(3f, cameraOriginalPos);
+            yield return new WaitForSeconds(0.01f);
+        }
+        whiteFade.GetComponent<FadeIn>().fadeIn(2.1f);
+        //3.6 seconds of shake
+        for (int i = 0; i < 240; i++)
+        {
+            shake(4f, cameraOriginalPos);
+            if(i == 180) {
+                MainCamera.GetComponent<AudioSource>().Stop();
+            }
+            yield return new WaitForSeconds(0.01f);
+        }
+        boss.GetComponent<Boss>().Disappear();
+        boss.GetComponent<Boss>().enabled = false;
+        boss.SetActive(false);
+        player.GetComponent<BasicMovement>().enabled = true;
+        whiteFade.GetComponent<FadeIn>().fadeOut(4f);
+        yield return new WaitForSeconds(6f);
+        whiteFade.GetComponent<FadeIn>().fadeIn(3f);
+        yield return new WaitForSeconds(3.1f);
+
+        //SceneManager.LoadScene("floor_1");
+        DataManager.Instance.Initialize();
+        canvas.GetComponent<EndMenu>().showEnd();
     }
 
     void shake(float shakeAmount, Vector3 originalPos)
