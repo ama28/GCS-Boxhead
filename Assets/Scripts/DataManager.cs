@@ -9,6 +9,7 @@ public class DataManager : Singleton<DataManager>
     public bool invincible = false;
     public bool infiniteAmmo = false;
     public int ammo = 0;
+    public float shotInterval = 0;
 
     public float InvincibleTime;
     
@@ -38,6 +39,7 @@ public class DataManager : Singleton<DataManager>
         {
             CurrentTime -= Time.deltaTime;
         }
+        shotInterval += Time.deltaTime;
         if(ammo < 0) {
             ammo = 0;
         }

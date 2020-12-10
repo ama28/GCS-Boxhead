@@ -102,26 +102,30 @@ public class FirePistol : MonoBehaviour
 
 
 
-            if (gunNum == 3 && DataManager.Instance.ammo > 0)
+            if (gunNum == 3)
             {
-               
-                float arcX;
-                float arcY;
+                if(DataManager.Instance.ammo > 0 && DataManager.Instance.shotInterval > 0.56f) {
+                    float arcX;
+                    float arcY;
 
-                if (playerDir.x == 1 || playerDir.x == -1 && playerDir.y == 0)
-                {
-                    arcX = 0;
-                    arcY = 0.5f;
+                    if (playerDir.x == 1 || playerDir.x == -1 && playerDir.y == 0)
+                    {
+                        arcX = 0;
+                        arcY = 0.5f;
+                    }
+
+                    else
+                    {
+                        arcX = 0.5f;
+                        arcY = 0;
+                    }
+                    DataManager.Instance.shotInterval = 0;
+                    DataManager.Instance.ammo -= 3;
+                    StartCoroutine(ShotSpark(new Vector2(playerDir.x, playerDir.y), new Vector2(playerDir.x + arcX, playerDir.y + arcY), new Vector2(playerDir.x - arcX, playerDir.y - arcY)));
+                } else if(DataManager.Instance.ammo <= 0){
+                    AudioManager.PlaySound(AudioManager.Sound.GunEmpty, transform.position);
                 }
-
-                else
-                {
-                    arcX = 0.5f;
-                    arcY = 0;
-                }
-                DataManager.Instance.ammo -= 3;
-                StartCoroutine(ShotSpark(new Vector2(playerDir.x, playerDir.y), new Vector2(playerDir.x + arcX, playerDir.y + arcY), new Vector2(playerDir.x - arcX, playerDir.y - arcY)));
-
+                
             }
         }
 
@@ -133,15 +137,20 @@ public class FirePistol : MonoBehaviour
                 Vector2 playerDir = playerMovement.facingDir;
 
                 interval += Time.deltaTime;
-                if (interval > 0.05f && DataManager.Instance.ammo > 0)
+                if (interval > 0.07f)
                 {
-                    DataManager.Instance.ammo -= 1;
-                    Shooter = true;
-                    BlowBackEffectPistol.SetActive(true);
-                    MachineSpark(playerDir);
-                    interval = 0;
+                    if(DataManager.Instance.ammo > 0) {
+                        DataManager.Instance.ammo -= 1;
+                        Shooter = true;
+                        BlowBackEffectPistol.SetActive(true);
+                        MachineSpark(playerDir);
+                        interval = 0;
+                    } else {
+                        AudioManager.PlaySound(AudioManager.Sound.GunEmpty, transform.position);
+                    }
+                    
                 }
-            }
+            } 
         }
     }
 
@@ -194,7 +203,7 @@ public class FirePistol : MonoBehaviour
         Transform bulletTransform3 = Instantiate(pfBullet, ShotGunPos.position, Quaternion.identity);
         bulletTransform3.GetComponent<Bullet>().setup(shot3);
         StartCoroutine(Shake(7, 0.3f));
-        AudioManager.PlaySound(AudioManager.Sound.Pistol, transform.position);
+        AudioManager.PlaySound(AudioManager.Sound.Shotgun, transform.position);
 
 
         yield return new WaitForSeconds(0.1f);
