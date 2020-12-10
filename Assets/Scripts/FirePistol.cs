@@ -102,7 +102,7 @@ public class FirePistol : MonoBehaviour
 
 
 
-            if (gunNum == 3)
+            if (gunNum == 3 && DataManager.Instance.ammo > 0)
             {
                
                 float arcX;
@@ -119,7 +119,7 @@ public class FirePistol : MonoBehaviour
                     arcX = 0.5f;
                     arcY = 0;
                 }
-
+                DataManager.Instance.ammo -= 3;
                 StartCoroutine(ShotSpark(new Vector2(playerDir.x, playerDir.y), new Vector2(playerDir.x + arcX, playerDir.y + arcY), new Vector2(playerDir.x - arcX, playerDir.y - arcY)));
 
             }
@@ -127,14 +127,15 @@ public class FirePistol : MonoBehaviour
 
         if (gunNum == 2)
         {
-                if (Input.GetKey(KeyCode.Space))
+            if (Input.GetKey(KeyCode.Space))
             {
                 Shooter = true;
                 Vector2 playerDir = playerMovement.facingDir;
 
                 interval += Time.deltaTime;
-                if (interval > 0.05f)
+                if (interval > 0.05f && DataManager.Instance.ammo > 0)
                 {
+                    DataManager.Instance.ammo -= 1;
                     Shooter = true;
                     BlowBackEffectPistol.SetActive(true);
                     MachineSpark(playerDir);

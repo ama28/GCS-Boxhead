@@ -64,6 +64,7 @@ public class BossHealth : MonoBehaviour
         }
         MainCamera.GetComponent<AudioSource>().Stop();
         boss.SetActive(false);
+        player.GetComponent<BasicMovement>().enabled = true;
         whiteFade.GetComponent<FadeIn>().fadeOut(4f);
         yield return new WaitForSeconds(6f);
         whiteFade.GetComponent<FadeIn>().fadeIn(3f);

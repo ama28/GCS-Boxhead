@@ -7,8 +7,11 @@ public class DataManager : Singleton<DataManager>
     public int MaxHealth;
     private int CurrentHealth;
     public bool invincible = false;
+    public bool infiniteAmmo = false;
+    public int ammo = 0;
 
     public float InvincibleTime;
+    
     private float CurrentTime;
 
     public GameEvent Death;
@@ -23,6 +26,9 @@ public class DataManager : Singleton<DataManager>
         invincible = false;
         CurrentHealth = MaxHealth;
         CurrentTime = 0;
+        if(infiniteAmmo) {
+            ammo = 99999999;
+        }
     }
 
     // Update is called once per frame
@@ -31,6 +37,9 @@ public class DataManager : Singleton<DataManager>
         if(CurrentTime > 0)
         {
             CurrentTime -= Time.deltaTime;
+        }
+        if(ammo < 0) {
+            ammo = 0;
         }
     }
 
