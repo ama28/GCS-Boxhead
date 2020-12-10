@@ -4,11 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class KeyScore : MonoBehaviour
+public class KeyScoreNew : MonoBehaviour
 {
     public static int bossKeys = 0;
     public static int stairKeys = 0;
-    Text score;
+    Text score; 
     public static bool f1keysCollected;
     public string sceneName;
     // Start is called before the first frame update
@@ -38,3 +38,4 @@ public class KeyScore : MonoBehaviour
 
   
 }
+

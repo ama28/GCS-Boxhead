@@ -27,8 +27,8 @@ public class Reset : MonoBehaviour
         DataManager.Instance.Initialize();
         EndPanel.SetActive(false);
         SceneManager.LoadScene(startScene);
-        KeyScore.bossKeys = 0;
-        KeyScore.stairKeys = 0;
+        KeyScoreNew.bossKeys = 0;
+        KeyScoreNew.stairKeys = 0;
         Cursor.visible = true;
     }
 }

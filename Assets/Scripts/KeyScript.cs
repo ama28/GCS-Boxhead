@@ -21,13 +21,13 @@ public class KeyScript : MonoBehaviour
     {
         if (collision.gameObject.tag == "normalkey")
         {
-            KeyScore.stairKeys += 1;
+            KeyScoreNew.stairKeys += 1;
             AudioManager.PlaySound(AudioManager.Sound.Key, transform.position);
             Destroy(collision.gameObject);
         }
         else if (collision.gameObject.tag == "boss_key")
         {
-            KeyScore.bossKeys += 1;
+            KeyScoreNew.bossKeys += 1;
             AudioManager.PlaySound(AudioManager.Sound.Key, transform.position);
             Destroy(collision.gameObject);
         }
