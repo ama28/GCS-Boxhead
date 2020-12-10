@@ -1273,16 +1273,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Gameplay:\r\n-Space key to shoot\r\n-arrow keys to move\r\n-press 1 for
-    pistol\r\n-press 2 for uzi\r\n-press 3 for shotgun\r\n-press esc to pause the
-    game and have options to quit the game. \r\n\r\nGame structure:\r\nTo clear the
-    game, you need to kill the boss.\r\n\r\nOn floor 1(beginning stage), collect
-    5 normal keys and 3 boss keys to clear the walls in front staircases to floor2.\r\n\r\nAfter
-    entering floor 2, you won\u2019t be able to walk back down to floor 1, as it\u2019s
-    overflowing with zombies.\r\n\r\nOn floor 2, collect 2 more boss keys to be able
-    to enter the boss floor. You will need exactly 5 boss keys. You will need to
-    find the boss door on floor 2 first.\r\n\r\nAfter entering the boss floor, slay
-    the boss\r\n"
+  m_text: "Gameplay:\r\n-SPACE to SHOOT\r\n-ARROW KEYS to MOVE\r\n-NUMBERS to SWITCH
+    WEAPONS\n-ESC to PAUSE\n\r\nGoal:\nKILL THE INFECTION.\n\r\nCollect 5 keys to
+    unlock floor 2.\r \nCollect 4 more boss keys to reach the TOP DOG.\n\r\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 01f502868dcae4e4392271193c5b7ea1, type: 2}
   m_sharedMaterial: {fileID: -6610760689771509745, guid: 01f502868dcae4e4392271193c5b7ea1,
@@ -1311,8 +1304,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 60
-  m_fontSizeBase: 60
+  m_fontSize: 100.57
+  m_fontSizeBase: 100.57
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1641,7 +1634,7 @@ RectTransform:
   m_GameObject: {fileID: 1811543316}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5.943719, y: 5.943719, z: 5.943719}
+  m_LocalScale: {x: 9.71, y: 9.71, z: 5.943719}
   m_Children:
   - {fileID: 290669314}
   m_Father: {fileID: 1307660456}
