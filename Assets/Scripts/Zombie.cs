@@ -38,8 +38,8 @@ public class Zombie : MonoBehaviour
         }
     }
 
-    private void takeDamage() {
-        CurrentHP -= 1;
+    private void takeDamage(int damage) {
+        CurrentHP -= damage;
         healthbar.fillAmount = CurrentHP / MaxHP;
         if(CurrentHP > 0) {
             if(distanceToPlayer <= 14) {
@@ -50,7 +50,9 @@ public class Zombie : MonoBehaviour
                 AudioManager.PlaySound(AudioManager.Sound.ZombieHurt, transform.position);
                 AudioManager.PlaySound(AudioManager.Sound.ZombieDeath, transform.position);
             }
-            spawner.enemiesSpawned--;
+            if(spawner != null) {
+                spawner.enemiesSpawned--;
+            }
             Destroy(gameObject);
         }
     }
@@ -59,14 +61,14 @@ public class Zombie : MonoBehaviour
     {
         if (collision.gameObject.tag == "Bullet") 
         {
-            takeDamage();
+            takeDamage(1);
         }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "Fireball") {
-            takeDamage();
+            takeDamage(1);
         }
     }
 

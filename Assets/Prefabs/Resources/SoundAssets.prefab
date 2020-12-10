@@ -71,7 +71,7 @@ MonoBehaviour:
   - name: 3
     volume: 0.7
     pitchVariation: 1
-    delay: 0
+    delay: 0.1
     spatial: 0
     clips:
     - {fileID: 8300000, guid: 686c3c3c07f334778846bd5a6b95c1d3, type: 3}
@@ -119,6 +119,20 @@ MonoBehaviour:
     spatial: 0
     clips:
     - {fileID: 8300000, guid: c98e0470bacf44d7897f690216d47049, type: 3}
+  - name: 10
+    volume: 0.8
+    pitchVariation: 0
+    delay: 0.05
+    spatial: 0
+    clips:
+    - {fileID: 8300000, guid: 1a530f962409d4060a1674387ffc8283, type: 3}
+  - name: 11
+    volume: 0.8
+    pitchVariation: 0
+    delay: 0
+    spatial: 0
+    clips:
+    - {fileID: 8300000, guid: a96dec16e5df4458f99dbaf738cf10eb, type: 3}
 --- !u!114 &168875539271415385
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -48,6 +48,10 @@ public class FirePistol : MonoBehaviour
         camStartPos = MainCamera.transform.localPosition;
     }
 
+    public void setCameraPos(Vector3 position) {
+        camStartPos = position;
+    }
+
     void Update()
     {
 
@@ -100,43 +104,53 @@ public class FirePistol : MonoBehaviour
 
             if (gunNum == 3)
             {
-               
-                float arcX;
-                float arcY;
+                if(DataManager.Instance.ammo > 0 && DataManager.Instance.shotInterval > 0.56f) {
+                    float arcX;
+                    float arcY;
 
-                if (playerDir.x == 1 || playerDir.x == -1 && playerDir.y == 0)
-                {
-                    arcX = 0;
-                    arcY = 0.5f;
+                    if (playerDir.x == 1 || playerDir.x == -1 && playerDir.y == 0)
+                    {
+                        arcX = 0;
+                        arcY = 0.5f;
+                    }
+
+                    else
+                    {
+                        arcX = 0.5f;
+                        arcY = 0;
+                    }
+                    DataManager.Instance.shotInterval = 0;
+                    DataManager.Instance.ammo -= 3;
+                    StartCoroutine(ShotSpark(new Vector2(playerDir.x, playerDir.y), new Vector2(playerDir.x + arcX, playerDir.y + arcY), new Vector2(playerDir.x - arcX, playerDir.y - arcY)));
+                } else if(DataManager.Instance.ammo <= 0){
+                    AudioManager.PlaySound(AudioManager.Sound.GunEmpty, transform.position);
                 }
-
-                else
-                {
-                    arcX = 0.5f;
-                    arcY = 0;
-                }
-
-                StartCoroutine(ShotSpark(new Vector2(playerDir.x, playerDir.y), new Vector2(playerDir.x + arcX, playerDir.y + arcY), new Vector2(playerDir.x - arcX, playerDir.y - arcY)));
-
+                
             }
         }
 
         if (gunNum == 2)
         {
-                if (Input.GetKey(KeyCode.Space))
+            if (Input.GetKey(KeyCode.Space))
             {
                 Shooter = true;
                 Vector2 playerDir = playerMovement.facingDir;
 
                 interval += Time.deltaTime;
-                if (interval > 0.05f)
+                if (interval > 0.07f)
                 {
-                    Shooter = true;
-                    BlowBackEffectPistol.SetActive(true);
-                    MachineSpark(playerDir);
-                    interval = 0;
+                    if(DataManager.Instance.ammo > 0) {
+                        DataManager.Instance.ammo -= 1;
+                        Shooter = true;
+                        BlowBackEffectPistol.SetActive(true);
+                        MachineSpark(playerDir);
+                        interval = 0;
+                    } else {
+                        AudioManager.PlaySound(AudioManager.Sound.GunEmpty, transform.position);
+                    }
+                    
                 }
-            }
+            } 
         }
     }
 
@@ -189,7 +203,7 @@ public class FirePistol : MonoBehaviour
         Transform bulletTransform3 = Instantiate(pfBullet, ShotGunPos.position, Quaternion.identity);
         bulletTransform3.GetComponent<Bullet>().setup(shot3);
         StartCoroutine(Shake(7, 0.3f));
-        AudioManager.PlaySound(AudioManager.Sound.Pistol, transform.position);
+        AudioManager.PlaySound(AudioManager.Sound.Shotgun, transform.position);
 
 
         yield return new WaitForSeconds(0.1f);
@@ -202,21 +216,18 @@ public class FirePistol : MonoBehaviour
 
     IEnumerator Shake(int shakeTimes, float shakeAmount)
     {
-        Vector3 originalPos = camStartPos;
-        Vector3 newPos = originalPos;
+        Vector3 newPos = camStartPos;
         for(int i = 0; i < shakeTimes; i++)
         {
             float offsetX = RandomSign() * Random.Range(0.7f, 1) * shakeAmount * 2 * ((shakeTimes - i)/shakeTimes * 0.8f + 0.3f);
             float offsetY = RandomSign() * Random.Range(0.7f, 1) * shakeAmount * 2 * ((shakeTimes - i)/shakeTimes * 0.8f + 0.3f);
-            Debug.Log(offsetX);
-            Debug.Log(offsetY);
-            newPos.x = originalPos.x + offsetX;
-            newPos.y += originalPos.y + offsetY;
+            newPos.x = camStartPos.x + offsetX;
+            newPos.y = camStartPos.y + offsetY;
 
             MainCamera.transform.localPosition = newPos;
             yield return new WaitForSeconds(0.01f);
         }
-        MainCamera.transform.localPosition = originalPos;
+        MainCamera.transform.localPosition = camStartPos;
     }
 
     float RandomSign() {

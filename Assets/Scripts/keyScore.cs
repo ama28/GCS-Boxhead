@@ -14,7 +14,7 @@ public class KeyScore : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        score = gameObject.GetComponent<Text>();
+        score = this.gameObject.GetComponent<Text>();
     }
 
     // Update is called once per frame

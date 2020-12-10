@@ -16,7 +16,10 @@ public static class AudioManager
         LowHealth,
         HealthPickup,
         ZombieDeath,
-        Key
+        Key,
+        GunEmpty,
+
+        Shotgun,
     }
 
     private static Dictionary<Sound, float> soundTimerDictionary;

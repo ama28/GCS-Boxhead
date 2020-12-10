@@ -35,12 +35,15 @@ public class Devil : MonoBehaviour
     {
         this.timer += Time.deltaTime;
         distanceToPlayer = Vector2.Distance(transform.position, target.position);
-        if (distanceToPlayer > 0)
+        if (distanceToPlayer > 5)
         {
+            animator.speed = 1;
             transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+        } else {
+            animator.speed = 0;
         }
         Vector2 dir = (target.position - transform.position).normalized;
-        if (this.timer >= this.shootPeriod && distanceToPlayer <= 10)
+        if (this.timer >= this.shootPeriod && distanceToPlayer <= 9)
         {
             Shoot(dir);
             this.timer = 0;
@@ -55,8 +58,8 @@ public class Devil : MonoBehaviour
         bulletTransform.GetComponent<Fireball>().setup(dir);
     }
 
-    private void takeDamage() {
-        CurrentHP -= 1;
+    private void takeDamage(int damage) {
+        CurrentHP -= damage;
         healthbar.fillAmount = CurrentHP / MaxHP;
         if(CurrentHP > 0) {
             if(distanceToPlayer <= 14) {
@@ -76,14 +79,14 @@ public class Devil : MonoBehaviour
     {
         if (collision.gameObject.tag == "Bullet") 
         {
-            takeDamage();
+            takeDamage(1);
         }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "Fireball") {
-            takeDamage();
+            takeDamage(1);
         }
     }
 

@@ -43,9 +43,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfccf3b87e492484fb867201c650bea2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  period: 7
-  devilRate: 0.33
-  maxEnemies: 6
+  period: 8
+  devilRate: 0.15
+  maxEnemies: 4
   enemiesSpawned: 0
   zombie: {fileID: 8863703922390463100, guid: 2cbe9f96162cb4269877292b34691e08, type: 3}
   devil: {fileID: 8863703922390463100, guid: 9ae1f0622e1284e5797ff2873337a969, type: 3}
