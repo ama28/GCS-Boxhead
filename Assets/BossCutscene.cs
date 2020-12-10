@@ -11,16 +11,29 @@ public class BossCutscene : MonoBehaviour
     private float cameraOffset = 16f;
     private int cameraZoomOut = 7;
     private bool triggered = false;
+    private FirePistol[] pistols;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(!triggered && collision.gameObject.tag == "Player") {
+            pistols = player.GetComponentsInChildren<FirePistol>(true);
             StartCoroutine("Cutscene");
             triggered = true;
         }
     }
 
+    private void Update() {
+        if(triggered) {
+            for(int i = 0; i < pistols.Length; i++) {
+                pistols[i].setCameraPos(new Vector3(0, 17, -10));
+            }
+        }
+    }
+
     private IEnumerator Cutscene() {
         player.GetComponent<BasicMovement>().enabled = false;
+        for(int i = 0; i < pistols.Length; i++) {
+            pistols[i].enabled = false;
+        }
         Camera cam = MainCamera.GetComponent<Camera>();
         //Zoom out
         Vector3 EndPosition = new Vector3(MainCamera.transform.localPosition.x, cameraOffset, MainCamera.transform.localPosition.z);
@@ -39,16 +52,25 @@ public class BossCutscene : MonoBehaviour
         }
         MainCamera.transform.localPosition = cameraOriginalPos;
         player.GetComponent<BasicMovement>().enabled = true;
+        for(int i = 0; i < pistols.Length; i++) {
+            pistols[i].enabled = true;
+        }
         boss.GetComponent<Boss>().enabled = true;
         bossUI.SetActive(true);
         //return to original with lifted camera
         while(cam.orthographicSize > 5 + 0.1 || MainCamera.transform.localPosition.y > cameraOffset + 0.1f) {
             cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, 5, Time.deltaTime * 2);
             MainCamera.transform.localPosition = Vector3.Lerp(MainCamera.transform.localPosition, EndPosition, Time.deltaTime * 3);
+            for(int i = 0; i < pistols.Length; i++) {
+                pistols[i].setCameraPos(MainCamera.transform.localPosition);
+            }
             yield return null;
         }
         cam.orthographicSize = 5;
         MainCamera.transform.localPosition = new Vector3(0, 17, -10);
+        for(int i = 0; i < pistols.Length; i++) {
+            pistols[i].setCameraPos(new Vector3(0, 17, -10));
+        }
         Destroy(gameObject);
     }
 

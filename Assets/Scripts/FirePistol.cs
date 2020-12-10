@@ -48,6 +48,10 @@ public class FirePistol : MonoBehaviour
         camStartPos = MainCamera.transform.localPosition;
     }
 
+    public void setCameraPos(Vector3 position) {
+        camStartPos = position;
+    }
+
     void Update()
     {
 
@@ -202,21 +206,18 @@ public class FirePistol : MonoBehaviour
 
     IEnumerator Shake(int shakeTimes, float shakeAmount)
     {
-        Vector3 originalPos = camStartPos;
-        Vector3 newPos = originalPos;
+        Vector3 newPos = camStartPos;
         for(int i = 0; i < shakeTimes; i++)
         {
             float offsetX = RandomSign() * Random.Range(0.7f, 1) * shakeAmount * 2 * ((shakeTimes - i)/shakeTimes * 0.8f + 0.3f);
             float offsetY = RandomSign() * Random.Range(0.7f, 1) * shakeAmount * 2 * ((shakeTimes - i)/shakeTimes * 0.8f + 0.3f);
-            Debug.Log(offsetX);
-            Debug.Log(offsetY);
-            newPos.x = originalPos.x + offsetX;
-            newPos.y += originalPos.y + offsetY;
+            newPos.x = camStartPos.x + offsetX;
+            newPos.y = camStartPos.y + offsetY;
 
             MainCamera.transform.localPosition = newPos;
             yield return new WaitForSeconds(0.01f);
         }
-        MainCamera.transform.localPosition = originalPos;
+        MainCamera.transform.localPosition = camStartPos;
     }
 
     float RandomSign() {
