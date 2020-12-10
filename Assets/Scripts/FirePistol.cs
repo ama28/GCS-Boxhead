@@ -35,13 +35,17 @@ public class FirePistol : MonoBehaviour
 
     private SpriteRenderer GunSprites;
 
+    private Camera MainCamera;
+
+    private Vector3 camStartPos;
+
    
     // Update is called once per frame
     private void Awake()
     {
         GunSprites = this.GetComponent<SpriteRenderer>();
-
-   
+        MainCamera = player.GetComponentInChildren<Camera>();
+        camStartPos = MainCamera.transform.localPosition;
     }
 
     void Update()
@@ -148,6 +152,7 @@ public class FirePistol : MonoBehaviour
         Shooter = true;
         Transform bulletTransform = Instantiate(pfBullet, transform.position, Quaternion.identity);
         bulletTransform.GetComponent<Bullet>().setup(moveInput);
+        StartCoroutine(Shake(4, .06f));
         AudioManager.PlaySound(AudioManager.Sound.Pistol, transform.position);
         BlowBackEffectPistol.transform.position = this.transform.position;
         BlowBackEffectPistol.SetActive(true);
@@ -161,10 +166,10 @@ public class FirePistol : MonoBehaviour
 
     void MachineSpark(Vector2 moveInput)
     {
-
         
         Transform bulletTransform = Instantiate(pfBullet, MiniGunPos.position, Quaternion.identity);
         bulletTransform.GetComponent<Bullet>().setup(moveInput);
+        StartCoroutine(Shake(1, .05f));
         AudioManager.PlaySound(AudioManager.Sound.Uzi, transform.position);
         BlowBackEffectPistol.SetActive(false);
         Shooter = false;
@@ -183,8 +188,8 @@ public class FirePistol : MonoBehaviour
 
         Transform bulletTransform3 = Instantiate(pfBullet, ShotGunPos.position, Quaternion.identity);
         bulletTransform3.GetComponent<Bullet>().setup(shot3);
+        StartCoroutine(Shake(7, 0.3f));
         AudioManager.PlaySound(AudioManager.Sound.Pistol, transform.position);
-        
 
 
         yield return new WaitForSeconds(0.1f);
@@ -195,5 +200,27 @@ public class FirePistol : MonoBehaviour
 
     }
 
+    IEnumerator Shake(int shakeTimes, float shakeAmount)
+    {
+        Vector3 originalPos = camStartPos;
+        Vector3 newPos = originalPos;
+        for(int i = 0; i < shakeTimes; i++)
+        {
+            float offsetX = RandomSign() * Random.Range(0.7f, 1) * shakeAmount * 2 * ((shakeTimes - i)/shakeTimes * 0.8f + 0.3f);
+            float offsetY = RandomSign() * Random.Range(0.7f, 1) * shakeAmount * 2 * ((shakeTimes - i)/shakeTimes * 0.8f + 0.3f);
+            Debug.Log(offsetX);
+            Debug.Log(offsetY);
+            newPos.x = originalPos.x + offsetX;
+            newPos.y += originalPos.y + offsetY;
+
+            MainCamera.transform.localPosition = newPos;
+            yield return new WaitForSeconds(0.01f);
+        }
+        MainCamera.transform.localPosition = originalPos;
+    }
+
+    float RandomSign() {
+        return (((float)Random.Range(0,2)) - .5f) * 2;
+    }
 
 }

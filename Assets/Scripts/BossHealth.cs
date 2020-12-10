@@ -23,7 +23,7 @@ public class BossHealth : MonoBehaviour
         healthValue.value = maxHealth;
         GameObject whiteFadeParent = whiteFade.transform.parent.gameObject;
         whiteFadeParent.SetActive(true);
-        whiteFadeParent.GetComponent<Canvas>().sortingOrder = -32768;
+        whiteFadeParent.GetComponent<Canvas>().sortingOrder = 2;
         whiteFade.GetComponent<Image>().canvasRenderer.SetAlpha(0f);
     }
 

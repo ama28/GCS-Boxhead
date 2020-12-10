@@ -10,6 +10,7 @@ public class SoundAssets : MonoBehaviour
         get {
             if(_i == null) {
                 _i = Instantiate(Resources.Load<SoundAssets>("SoundAssets"));
+                AudioManager.Initialize();
             }
             return _i;
         }
@@ -23,7 +24,7 @@ public class SoundAssets : MonoBehaviour
         public AudioManager.Sound name;
         public float volume = 1f;
         public bool pitchVariation = false;
-        public int delay = 0;
+        public float delay = 0f;
         public bool spatial = false;
         public AudioClip[] clips;
     }

@@ -45,7 +45,7 @@ public static class AudioManager
         //checking if we can play the sound 
         //if delay is set but not in dictionary, add to dictionary
         if(soundEffect.delay != 0) {
-            if(!soundTimerDictionary.ContainsKey(name)) {
+            if(soundTimerDictionary.ContainsKey(name)) {
                 float lastTimePlayed = soundTimerDictionary[name];
                 if(lastTimePlayed + soundEffect.delay < Time.time) {
                     soundTimerDictionary[name] = Time.time;
