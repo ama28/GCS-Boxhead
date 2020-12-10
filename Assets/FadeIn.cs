@@ -9,7 +9,7 @@ public class FadeIn : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        whiteFade = this.gameObject.GetComponent<Image>();
+        whiteFade = GetComponent<Image>();
         whiteFade.canvasRenderer.SetAlpha(0f);
     }
 

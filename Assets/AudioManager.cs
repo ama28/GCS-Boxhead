@@ -20,8 +20,8 @@ public static class AudioManager
     }
 
     private static Dictionary<Sound, float> soundTimerDictionary;
-    private static GameObject soundGameObject;
-    private static AudioSource audioSource;
+    private static GameObject soundGameObject, soundGameObject2;
+    private static AudioSource audioSourceNormal, audioSourceSpecial;
 
     public static void Initialize() {
         soundTimerDictionary = new Dictionary<Sound, float>();
@@ -30,7 +30,15 @@ public static class AudioManager
     public static void PlaySound(AudioManager.Sound name, Vector3 position) {
         if(soundGameObject == null) {
             soundGameObject = new GameObject("Sound");
-            audioSource = soundGameObject.AddComponent<AudioSource>();
+            audioSourceNormal = soundGameObject.AddComponent<AudioSource>();
+        }
+        if(soundGameObject2 == null) {
+            soundGameObject2 = new GameObject("Sound");
+            audioSourceSpecial = soundGameObject.AddComponent<AudioSource>();
+        }
+        AudioSource audioSource = audioSourceNormal;
+        if(name == Sound.DogDeath || name == Sound.DogRoar) {
+            audioSource = audioSourceSpecial;
         }
         soundGameObject.transform.position = position;
         SoundAssets.SoundEffect soundEffect = GetSoundEffect(name);
