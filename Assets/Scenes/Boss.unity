@@ -493,6 +493,7 @@ MonoBehaviour:
   shootPeriod: 0.7
   fireball: {fileID: 6711168111432735628, guid: 00691870d9163493d88e51b308281370,
     type: 3}
+  zombie: {fileID: 0}
   fireballPosition: {fileID: 1780440313}
   newDirection: {x: 0, y: 0, z: 0}
   inRange: 0
@@ -780,6 +781,7 @@ MonoBehaviour:
   shootPeriod: 0.7
   fireball: {fileID: 4048310049141589432, guid: 52d68e382d3b81141ab1abebfb7da877,
     type: 3}
+  zombie: {fileID: 8863703922390463100, guid: 2cbe9f96162cb4269877292b34691e08, type: 3}
   fireballPosition: {fileID: 1554551568}
   newDirection: {x: 0, y: 0, z: 0}
   inRange: 0
@@ -878,6 +880,21 @@ PrefabInstance:
       value: Gun
       objectReference: {fileID: 0}
     - target: {fileID: 1379054390839615438, guid: 80620f3490aa7fe42901099d9d0d6d72,
+        type: 3}
+      propertyPath: m_Name
+      value: Gun
+      objectReference: {fileID: 0}
+    - target: {fileID: 4895737812592984189, guid: 80620f3490aa7fe42901099d9d0d6d72,
+        type: 3}
+      propertyPath: m_Name
+      value: Gun
+      objectReference: {fileID: 0}
+    - target: {fileID: 4895737814289216873, guid: 80620f3490aa7fe42901099d9d0d6d72,
+        type: 3}
+      propertyPath: m_Name
+      value: Gun
+      objectReference: {fileID: 0}
+    - target: {fileID: 4895737814322732365, guid: 80620f3490aa7fe42901099d9d0d6d72,
         type: 3}
       propertyPath: m_Name
       value: Gun
@@ -1515,7 +1532,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 32767
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &354136145
 RectTransform:
@@ -2195,7 +2212,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_TargetDisplay: 0
 --- !u!224 &614996040
 RectTransform:
@@ -3151,7 +3168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthValue: {fileID: 11400000, guid: 0cb00d622c8d8c74a85ed01d37c1b151, type: 2}
-  maxHealth: 40
+  maxHealth: 60
   healthBar: {fileID: 842731268}
   bossImage: {fileID: 1799829391}
   boss: {fileID: 105878265}
@@ -5407,7 +5424,7 @@ PrefabInstance:
     - target: {fileID: 1995826907736125757, guid: d7cc334e62bc3eb4abf476f3ec7ec641,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d7cc334e62bc3eb4abf476f3ec7ec641, type: 3}

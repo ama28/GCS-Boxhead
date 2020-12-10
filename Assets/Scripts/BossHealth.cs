@@ -40,12 +40,12 @@ public class BossHealth : MonoBehaviour
 
     IEnumerator BossDie()
     {
+        boss.GetComponent<Boss>().Die();
         GameObject gun = GameObject.Find("Gun");
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         player.GetComponent<BasicMovement>().enabled = false;
         DataManager.Instance.invincible = true;
         gun.GetComponent<FirePistol>().enabled = false;
-        boss.GetComponent<Boss>().enabled = false;
         bossImage.enabled = false;
         AudioManager.PlaySound(AudioManager.Sound.DogDeath, transform.position);
         Vector3 cameraOriginalPos = MainCamera.transform.localPosition;
@@ -60,9 +60,13 @@ public class BossHealth : MonoBehaviour
         for (int i = 0; i < 240; i++)
         {
             shake(4f, cameraOriginalPos);
+            if(i == 200) {
+                MainCamera.GetComponent<AudioSource>().Stop();
+            }
             yield return new WaitForSeconds(0.01f);
         }
-        MainCamera.GetComponent<AudioSource>().Stop();
+        boss.GetComponent<Boss>().Disappear();
+        boss.GetComponent<Boss>().enabled = false;
         boss.SetActive(false);
         player.GetComponent<BasicMovement>().enabled = true;
         whiteFade.GetComponent<FadeIn>().fadeOut(4f);

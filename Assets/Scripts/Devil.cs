@@ -55,8 +55,8 @@ public class Devil : MonoBehaviour
         bulletTransform.GetComponent<Fireball>().setup(dir);
     }
 
-    private void takeDamage() {
-        CurrentHP -= 1;
+    private void takeDamage(int damage) {
+        CurrentHP -= damage;
         healthbar.fillAmount = CurrentHP / MaxHP;
         if(CurrentHP > 0) {
             if(distanceToPlayer <= 14) {
@@ -76,14 +76,14 @@ public class Devil : MonoBehaviour
     {
         if (collision.gameObject.tag == "Bullet") 
         {
-            takeDamage();
+            takeDamage(1);
         }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "Fireball") {
-            takeDamage();
+            takeDamage(1);
         }
     }
 

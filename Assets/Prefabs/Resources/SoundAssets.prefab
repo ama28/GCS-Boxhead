@@ -71,7 +71,7 @@ MonoBehaviour:
   - name: 3
     volume: 0.7
     pitchVariation: 1
-    delay: 0
+    delay: 0.1
     spatial: 0
     clips:
     - {fileID: 8300000, guid: 686c3c3c07f334778846bd5a6b95c1d3, type: 3}
