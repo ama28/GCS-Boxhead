@@ -7,6 +7,7 @@ public class Fireball : MonoBehaviour
     private Rigidbody2D body;
     private BoxCollider2D collider;
     private SpriteRenderer renderer;
+    private GameObject spriteChild;
     public AudioClip playerHurtNoise;
     private Vector3 dir;
     private float travelledDistance = 0;
@@ -21,7 +22,8 @@ public class Fireball : MonoBehaviour
         transform.eulerAngles = new Vector3(0, 0, getAngleFromVector(dir) - 90);
         body = this.GetComponent(typeof(Rigidbody2D)) as Rigidbody2D;
         collider = this.GetComponent(typeof(BoxCollider2D)) as BoxCollider2D;
-        renderer = this.GetComponent(typeof(SpriteRenderer)) as SpriteRenderer;
+        renderer = this.GetComponentInChildren(typeof(SpriteRenderer)) as SpriteRenderer;
+        spriteChild = renderer.gameObject;
 
         Destroy(gameObject, timeAlive);
     }
@@ -31,6 +33,7 @@ public class Fireball : MonoBehaviour
         float d = moveSpeed * Time.deltaTime;
         travelledDistance += d;
         transform.position += dir * d;
+        spriteChild.transform.rotation *= Quaternion.Euler(Vector3.forward * 20);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -62,7 +65,8 @@ public class Fireball : MonoBehaviour
     {
         
         FireEffect.SetActive(true);
-        yield return new WaitForSeconds(0.1f);
+        renderer.enabled = false;
+        yield return new WaitForSeconds(0.2f);
         Destroy(gameObject);
 
     }

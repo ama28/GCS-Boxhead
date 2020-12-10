@@ -15,6 +15,8 @@ public class Zombie : MonoBehaviour
 
     public float MaxHP;
     private float CurrentHP;
+    private float distanceToPlayer;
+    private Spawner spawner;
 
     void Start()
     {
@@ -25,7 +27,8 @@ public class Zombie : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Vector2.Distance(transform.position, target.position) > 0)
+        distanceToPlayer = Vector2.Distance(transform.position, target.position);
+        if (distanceToPlayer > 0)
         {
             transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
 
@@ -33,9 +36,23 @@ public class Zombie : MonoBehaviour
             animator.SetFloat("Horizontal", dir.x);
             animator.SetFloat("Vertical", dir.y);
         }
+    }
 
-        if (CurrentHP <= 0) {
-            AudioManager.PlaySound(AudioManager.Sound.ZombieDeath, transform.position);
+    private void takeDamage(int damage) {
+        CurrentHP -= damage;
+        healthbar.fillAmount = CurrentHP / MaxHP;
+        if(CurrentHP > 0) {
+            if(distanceToPlayer <= 14) {
+                AudioManager.PlaySound(AudioManager.Sound.ZombieHurt, transform.position);
+            }
+        } else {
+            if(distanceToPlayer <= 14) {
+                AudioManager.PlaySound(AudioManager.Sound.ZombieHurt, transform.position);
+                AudioManager.PlaySound(AudioManager.Sound.ZombieDeath, transform.position);
+            }
+            if(spawner != null) {
+                spawner.enemiesSpawned--;
+            }
             Destroy(gameObject);
         }
     }
@@ -44,12 +61,20 @@ public class Zombie : MonoBehaviour
     {
         if (collision.gameObject.tag == "Bullet") 
         {
-            CurrentHP -= 1;
-            healthbar.fillAmount = CurrentHP / MaxHP;
-            if(CurrentHP > 0) {
-            AudioManager.PlaySound(AudioManager.Sound.ZombieHurt, transform.position);
-            }
+            takeDamage(1);
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Fireball") {
+            takeDamage(1);
+        }
+    }
+
+    public void setSpawn(Spawner spawnerIn) 
+    {
+        spawner = spawnerIn;
     }
 }
 

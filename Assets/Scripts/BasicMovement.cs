@@ -16,6 +16,7 @@ public class BasicMovement : MonoBehaviour
 
     public int MainGunNum = 1;
 
+    public GameObject selector; 
     // Start is called before the first frame update
     void Start()
     {
@@ -34,19 +35,19 @@ public class BasicMovement : MonoBehaviour
         if (Input.GetKeyDown("1"))
         {
             MainGunNum = 1;
-
+            selector.transform.localPosition = new Vector2(-31.5f,0);
         }
 
         if (Input.GetKeyDown("2"))
         {
             MainGunNum = 2;
-
+            selector.transform.localPosition = new Vector2(1.5f, 0);
         }
 
         if (Input.GetKeyDown("3"))
         {
             MainGunNum = 3;
-
+            selector.transform.localPosition = new Vector2(31.9f, 0);
         }
 
 

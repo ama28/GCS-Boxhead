@@ -60,19 +60,18 @@ MonoBehaviour:
     clips:
     - {fileID: 8300000, guid: fcb9482d40b1e4a83ba00198dc245e30, type: 3}
   - name: 2
-    volume: 0.4
+    volume: 0.9
     pitchVariation: 1
-    delay: 0
+    delay: 0.1
     spatial: 1
     clips:
-    - {fileID: 8300000, guid: 381c79d13364c489ba5d05da6a90e7af, type: 3}
-    - {fileID: 8300000, guid: ea415ac7b625e452292b3437520b9207, type: 3}
-    - {fileID: 8300000, guid: 2b6271901e4ff4fe08a8ebd2a4826d82, type: 3}
-    - {fileID: 8300000, guid: 0e5e8cbc414e64974aef368847dce49e, type: 3}
+    - {fileID: 8300000, guid: 4d965bc4ec96946a3a327bb2ca329ed8, type: 3}
+    - {fileID: 8300000, guid: a12aaba69a363410592bab895f32d69f, type: 3}
+    - {fileID: 8300000, guid: acf6dc2ce19c348c0b153e59fa167b19, type: 3}
   - name: 3
-    volume: 0.5
+    volume: 0.7
     pitchVariation: 1
-    delay: 0
+    delay: 0.1
     spatial: 0
     clips:
     - {fileID: 8300000, guid: 686c3c3c07f334778846bd5a6b95c1d3, type: 3}
@@ -91,28 +90,56 @@ MonoBehaviour:
     clips:
     - {fileID: 8300000, guid: af1a02581c8b04aa692b4b9967d7b743, type: 3}
   - name: 6
-    volume: 0.8
+    volume: 0.9
     pitchVariation: 0
     delay: 0
     spatial: 0
     clips:
     - {fileID: 8300000, guid: d4d9ecac319324813a1f25042a2212a8, type: 3}
   - name: 7
-    volume: 0.8
+    volume: 0.7
     pitchVariation: 0
     delay: 0
     spatial: 0
     clips:
     - {fileID: 8300000, guid: 62e828864a8e04d8283c95f16de5bf6c, type: 3}
   - name: 8
-    volume: 0.5
+    volume: 0.8
     pitchVariation: 1
-    delay: 0
+    delay: 0.1
     spatial: 1
     clips:
     - {fileID: 8300000, guid: 270bd73fb5dba48e78d4616be34a2de4, type: 3}
     - {fileID: 8300000, guid: ad09f467d02fc4a72bc91c1b50c09079, type: 3}
     - {fileID: 8300000, guid: cf53f1cfca04b4e7b89b200f6c34fabb, type: 3}
+  - name: 9
+    volume: 0.8
+    pitchVariation: 0
+    delay: 0
+    spatial: 0
+    clips:
+    - {fileID: 8300000, guid: c98e0470bacf44d7897f690216d47049, type: 3}
+  - name: 10
+    volume: 0.8
+    pitchVariation: 0
+    delay: 0.05
+    spatial: 0
+    clips:
+    - {fileID: 8300000, guid: 1a530f962409d4060a1674387ffc8283, type: 3}
+  - name: 11
+    volume: 0.8
+    pitchVariation: 0
+    delay: 0
+    spatial: 0
+    clips:
+    - {fileID: 8300000, guid: a96dec16e5df4458f99dbaf738cf10eb, type: 3}
+  - name: 12
+    volume: 0.8
+    pitchVariation: 0
+    delay: 0
+    spatial: 0
+    clips:
+    - {fileID: 8300000, guid: bff2b210a57834c2f9eba4177149f8d1, type: 3}
 --- !u!114 &168875539271415385
 MonoBehaviour:
   m_ObjectHideFlags: 0
