@@ -34,7 +34,7 @@ public class EndMenu : MonoBehaviour
     {
         Time.timeScale = 1f;
         Cursor.visible = true;
-        KeyScore.bossKeys = 0;
-        KeyScore.stairKeys = 0;
+        KeyScoreNew.bossKeys = 0;
+        KeyScoreNew.stairKeys = 0;
     }
 }
