@@ -10,6 +10,7 @@ public class Ammo : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player"){
             DataManager.Instance.ammo += 30;
+            AudioManager.PlaySound(AudioManager.Sound.Ammo, transform.position);
             Destroy(gameObject);
         }
     }

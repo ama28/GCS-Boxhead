@@ -20,14 +20,18 @@ public class KeyScoreNew : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (sceneName == "floor_1")
+        string name = SceneManager.GetActiveScene().name;
+        Debug.Log(sceneName);
+        if (name == "floor_1")
         {
             score.text = stairKeys + "/5";
         }
-        else if (sceneName == "floor_2")
+        else if (name == "floor_2")
         {
 
             score.text = bossKeys + "/4";
+        } else {
+            score.text = stairKeys + "/" + bossKeys;
         }
 
         if(stairKeys >= 5)

@@ -59,7 +59,7 @@ public class Boss : MonoBehaviour
                     StartCoroutine(FireballBursts());
                     break;
                 case 1:
-                    timeTillNextAttack = 6f;
+                    timeTillNextAttack = 5.1f;
                     StartCoroutine(FireballAngles());
                     break;
                 case 2:

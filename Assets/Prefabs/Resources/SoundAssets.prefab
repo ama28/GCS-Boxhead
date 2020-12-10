@@ -133,6 +133,13 @@ MonoBehaviour:
     spatial: 0
     clips:
     - {fileID: 8300000, guid: a96dec16e5df4458f99dbaf738cf10eb, type: 3}
+  - name: 12
+    volume: 0.8
+    pitchVariation: 0
+    delay: 0
+    spatial: 0
+    clips:
+    - {fileID: 8300000, guid: bff2b210a57834c2f9eba4177149f8d1, type: 3}
 --- !u!114 &168875539271415385
 MonoBehaviour:
   m_ObjectHideFlags: 0

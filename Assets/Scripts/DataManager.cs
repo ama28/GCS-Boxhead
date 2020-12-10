@@ -28,7 +28,7 @@ public class DataManager : Singleton<DataManager>
         CurrentHealth = MaxHealth;
         CurrentTime = 0;
         if(infiniteAmmo) {
-            ammo = 99999999;
+            ammo = 999;
         }
     }
 
@@ -42,6 +42,8 @@ public class DataManager : Singleton<DataManager>
         shotInterval += Time.deltaTime;
         if(ammo < 0) {
             ammo = 0;
+        } else if(ammo > 999) {
+            ammo = 999;
         }
     }
 

@@ -20,6 +20,7 @@ public static class AudioManager
         GunEmpty,
 
         Shotgun,
+        Ammo
     }
 
     private static Dictionary<Sound, float> soundTimerDictionary;
