@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class SceneTransition : MonoBehaviour
 {
+    public GameObject InstructionText;
+
     public void PlayGame()
     {
         SceneManager.LoadScene("floor_1");
@@ -15,4 +17,15 @@ public class SceneTransition : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void InstructionsOn()
+    {
+        InstructionText.SetActive(true);
+    }
+
+    public void InstructionsOff()
+    {
+        InstructionText.SetActive(false);
+    }
+
 }

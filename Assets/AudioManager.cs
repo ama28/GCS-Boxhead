@@ -20,8 +20,8 @@ public static class AudioManager
     }
 
     private static Dictionary<Sound, float> soundTimerDictionary;
-    private static GameObject soundGameObject;
-    private static AudioSource audioSource;
+    private static GameObject soundGameObject, soundGameObject2;
+    private static AudioSource audioSourceNormal, audioSourceSpecial;
 
     public static void Initialize() {
         soundTimerDictionary = new Dictionary<Sound, float>();
@@ -30,14 +30,22 @@ public static class AudioManager
     public static void PlaySound(AudioManager.Sound name, Vector3 position) {
         if(soundGameObject == null) {
             soundGameObject = new GameObject("Sound");
-            audioSource = soundGameObject.AddComponent<AudioSource>();
+            audioSourceNormal = soundGameObject.AddComponent<AudioSource>();
+        }
+        if(soundGameObject2 == null) {
+            soundGameObject2 = new GameObject("Sound");
+            audioSourceSpecial = soundGameObject.AddComponent<AudioSource>();
+        }
+        AudioSource audioSource = audioSourceNormal;
+        if(name == Sound.DogDeath || name == Sound.DogRoar) {
+            audioSource = audioSourceSpecial;
         }
         soundGameObject.transform.position = position;
         SoundAssets.SoundEffect soundEffect = GetSoundEffect(name);
         //checking if we can play the sound 
         //if delay is set but not in dictionary, add to dictionary
         if(soundEffect.delay != 0) {
-            if(!soundTimerDictionary.ContainsKey(name)) {
+            if(soundTimerDictionary.ContainsKey(name)) {
                 float lastTimePlayed = soundTimerDictionary[name];
                 if(lastTimePlayed + soundEffect.delay < Time.time) {
                     soundTimerDictionary[name] = Time.time;

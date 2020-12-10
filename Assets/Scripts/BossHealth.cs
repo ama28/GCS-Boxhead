@@ -21,6 +21,10 @@ public class BossHealth : MonoBehaviour
     void Start()
     {
         healthValue.value = maxHealth;
+        GameObject whiteFadeParent = whiteFade.transform.parent.gameObject;
+        whiteFadeParent.SetActive(true);
+        whiteFadeParent.GetComponent<Canvas>().sortingOrder = 2;
+        whiteFade.GetComponent<Image>().canvasRenderer.SetAlpha(0f);
     }
 
     // Update is called once per frame
@@ -29,7 +33,6 @@ public class BossHealth : MonoBehaviour
         healthBar.fillAmount = (float)healthValue.value / maxHealth;
         if (healthValue.value <= 0 && alive)
         {
-            Debug.Log("DONE");
             StartCoroutine("BossDie");
             alive = false;
         }

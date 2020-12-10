@@ -7,7 +7,6 @@ public class PauseMenu : MonoBehaviour
 {
     public static bool gameIsPaused = false;
     public GameObject pauseMenuUI;
-    public GameObject player;
 
     private void Update()
     {
@@ -27,7 +26,7 @@ public class PauseMenu : MonoBehaviour
     public void Resume()
     {
         pauseMenuUI.SetActive(false);
-        player.GetComponent<BasicMovement>().enabled = true;
+        GameObject.FindWithTag("Player").GetComponent<BasicMovement>().enabled = true;
         Time.timeScale = 1f;
         gameIsPaused = false;
     }
@@ -35,7 +34,7 @@ public class PauseMenu : MonoBehaviour
     void Pause()
     {
         pauseMenuUI.SetActive(true);
-        player.GetComponent<BasicMovement>().enabled = false;
+        GameObject.FindWithTag("Player").GetComponent<BasicMovement>().enabled = false;
         Time.timeScale = 0f;
         gameIsPaused = true;
     }

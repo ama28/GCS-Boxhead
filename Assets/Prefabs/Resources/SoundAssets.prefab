@@ -62,7 +62,7 @@ MonoBehaviour:
   - name: 2
     volume: 0.9
     pitchVariation: 1
-    delay: 0
+    delay: 0.1
     spatial: 1
     clips:
     - {fileID: 8300000, guid: 4d965bc4ec96946a3a327bb2ca329ed8, type: 3}
@@ -106,7 +106,7 @@ MonoBehaviour:
   - name: 8
     volume: 0.8
     pitchVariation: 1
-    delay: 0
+    delay: 0.1
     spatial: 1
     clips:
     - {fileID: 8300000, guid: 270bd73fb5dba48e78d4616be34a2de4, type: 3}
